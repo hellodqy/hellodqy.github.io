@@ -1,281 +1,177 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>快乐小凳凳 - 又菜又爱玩~</title><meta name="author" content="DQY"><meta name="copyright" content="DQY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="快乐小凳凳">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="快乐小凳凳">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="DQY">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '快乐小凳凳',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-04-23 00:14:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/21/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-21T01:36:50.675Z" itemprop="datePublished">2023-04-21</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/21/hello-world/">Hexo+Github搭建个人博客</a>
-    </h1>
-  
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="快乐小凳凳"><span class="site-name">快乐小凳凳</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">快乐小凳凳</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/21/hello-world/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-21T01:36:50.675Z" title="发表于 2023-04-21 09:36:50">2023-04-21</time></span></div><div class="content">Hexo+Github搭建个人博客
+Hexo+Github搭建个人博客啊~磕磕绊绊终于搭好了，分享一下我的搭建过程和遇到的问题与解决方案：
+安装并配置Node.js注意：
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>啊~磕磕绊绊终于搭好了，分享一下我的搭建过程和遇到的问题与解决方案：</p>
-<h3 id="安装并配置Node-js"><a href="#安装并配置Node-js" class="headerlink" title="安装并配置Node.js"></a>安装并配置Node.js</h3><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ol>
-<li>没有需求千万不要安装cnpm！(参考文章第五步有一个按需安装cnpm)</li>
-<li>cmd全程使用管理员模式打开</li>
-</ol>
-<h3 id="参考文章：https-blog-csdn-net-weixin-52799373-article-details-123840137"><a href="#参考文章：https-blog-csdn-net-weixin-52799373-article-details-123840137" class="headerlink" title="参考文章：https://blog.csdn.net/weixin_52799373/article/details/123840137"></a>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52799373/article/details/123840137">https://blog.csdn.net/weixin_52799373/article/details/123840137</a></h3><p>cmd管理员模式下执行下述命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+没有需求千万不要安装cnpm！(参考文章第五步有一个按需安装cnpm)
+cmd全程使用管理员模式打开
 
-<h3 id="安装并配置Git"><a href="#安装并配置Git" class="headerlink" title="安装并配置Git"></a>安装并配置Git</h3><p>这个没什么坑，照着教程做就好</p>
-<h3 id="Git教程：https-www-cnblogs-com-xueweisuoyong-p-11914045-html"><a href="#Git教程：https-www-cnblogs-com-xueweisuoyong-p-11914045-html" class="headerlink" title="Git教程：https://www.cnblogs.com/xueweisuoyong/p/11914045.html"></a>Git教程：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html">https://www.cnblogs.com/xueweisuoyong/p/11914045.html</a></h3><h3 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h3><p><img src="https://pic1.zhimg.com/80/v2-010e684d021680e94f0142adc3e014b8_720w.webp"></p>
-<h5 id="呐，这里一定要注意，仓库名称一定得是你的Github用户名-github-io！"><a href="#呐，这里一定要注意，仓库名称一定得是你的Github用户名-github-io！" class="headerlink" title="呐，这里一定要注意，仓库名称一定得是你的Github用户名.github.io！"></a>呐，这里一定要注意，仓库名称一定得是你的Github用户名.github.io！</h5><p>例如：你的Github用户名叫做helloworld，那么仓库名称就应该设置为helloworld.github.io</p>
-<h5 id="另外，访问权限得设置成Public，设成Private不得行！"><a href="#另外，访问权限得设置成Public，设成Private不得行！" class="headerlink" title="另外，访问权限得设置成Public，设成Private不得行！"></a>另外，访问权限得设置成Public，设成Private不得行！</h5><p><img src="https://pic2.zhimg.com/80/v2-d6fa95cce4e455153187135c8ee12359_720w.webp"></p>
-<h3 id="生成Github-SSH-Token"><a href="#生成Github-SSH-Token" class="headerlink" title="生成Github  SSH  Token"></a>生成Github  SSH  Token</h3><h5 id="注意：生成的Token记得复制并保存下来"><a href="#注意：生成的Token记得复制并保存下来" class="headerlink" title="注意：生成的Token记得复制并保存下来"></a>注意：生成的Token记得复制并保存下来</h5><p><img src="https://xxx.ilovefishc.com/album/202304/22/113125nl1vidmmpo01dmf5.png"></p>
-<p><img src="https://xxx.ilovefishc.com/album/202304/22/113129xg4oz4bezohzub97.png"></p>
-<p><img src="https://xxx.ilovefishc.com/album/202304/22/113132ift2tkwxfyedt0y7.png"></p>
-<p><img src="https://xxx.ilovefishc.com/album/202304/22/113134q8838l6vv776lyv7.png"></p>
-<p>Expiration是这个Token的使用期限，我偷懒就爱选择No expiration(永不过期)</p>
-<p>权限全勾上就好</p>
-<p><img src="https://xxx.ilovefishc.com/album/202304/22/113136honfjanazvs9ji1y.png"></p>
-<h3 id="使用SSH-Token"><a href="#使用SSH-Token" class="headerlink" title="使用SSH  Token"></a>使用SSH  Token</h3><ol>
-<li><h5 id="删除远程仓库地址"><a href="#删除远程仓库地址" class="headerlink" title="删除远程仓库地址"></a>删除远程仓库地址</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote remove origin</span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="检查是否删除成功"><a href="#检查是否删除成功" class="headerlink" title="检查是否删除成功"></a>检查是否删除成功</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+参考文章：https://blog.csdn.net/weixin_52799373/article/details/123840137
+cmd管理员模式下执行下述命令
+1npm install -g hexo-cli
 
-<p>没有输出证明删除成功</p>
-</li>
-<li><h5 id="链接远程仓库"><a href="#链接远程仓库" class="headerlink" title="链接远程仓库"></a>链接远程仓库</h5><p>注意：不要直接复制，SSH密钥粘贴刚刚保存的Token，用户名和仓库名记得替换成你自己的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://SSH密钥@github.com/用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+安装并配置Git这个没什么坑，照着教程做就好
+Git教程：https://www.cnblogs.com/xueweisuoyong/p/11914045.html
+创建Github仓库
+呐，这里一定要注意，仓库名称一定得是你的Github用户名.github.io！
+例如：你的Github用户名叫做helloworld，那么仓库名称就应该设置为helloworld.github.io
+另外，访问权限得设置成Public，设成Private不得行！
 
-<p>完成后再次输入第二步的命令，看到fetch和pull的网址里面出现有生成SSH Token就设置成功了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH  Keys"></a>生成SSH  Keys</h3><h5 id="执行下述命令，提示选择y-x2F-n就输入y，没有就一路回车"><a href="#执行下述命令，提示选择y-x2F-n就输入y，没有就一路回车" class="headerlink" title="执行下述命令，提示选择y&#x2F;n就输入y，没有就一路回车"></a>执行下述命令，提示选择y&#x2F;n就输入y，没有就一路回车</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
-
-<h5 id="找到密钥位置并复制"><a href="#找到密钥位置并复制" class="headerlink" title="找到密钥位置并复制"></a>找到密钥位置并复制</h5><p><img src="https://static001.geekbang.org/infoq/a2/a29aec8d949a8152bad17e1649316bbc.png"></p>
-<h5 id="测试ssh是否绑定成功"><a href="#测试ssh是否绑定成功" class="headerlink" title="测试ssh是否绑定成功"></a>测试ssh是否绑定成功</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<h5 id="如果问你yes-x2F-no直接yes"><a href="#如果问你yes-x2F-no直接yes" class="headerlink" title="如果问你yes&#x2F;no直接yes"></a>如果问你yes&#x2F;no直接yes</h5><p><img src="https://static001.geekbang.org/infoq/82/827db6ee904638d62a4f5249fe110bdf.png" alt="img"></p>
-<h3 id="本地访问博客"><a href="#本地访问博客" class="headerlink" title="本地访问博客"></a>本地访问博客</h3><ol>
-<li><h5 id="创建一个Blog文件夹并启用Git-Bash-Here"><a href="#创建一个Blog文件夹并启用Git-Bash-Here" class="headerlink" title="创建一个Blog文件夹并启用Git Bash Here"></a>创建一个Blog文件夹并启用Git Bash Here</h5><p><img src="https://static001.geekbang.org/infoq/b0/b06a27bee58606277ea46f413b34ed14.png"></p>
-</li>
-<li><h5 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>这里折腾了好久，一直显示command not ofund，重装了好几次node.jx，分析应该是前面安装了cnpm导致hexo的存储位置被改掉了</p>
-<h5 id="解决：前面加一个npx就好了，还是不行的话就自行百度谷歌吧"><a href="#解决：前面加一个npx就好了，还是不行的话就自行百度谷歌吧" class="headerlink" title="解决：前面加一个npx就好了，还是不行的话就自行百度谷歌吧"></a>解决：前面加一个npx就好了，还是不行的话就自行百度谷歌吧</h5><h5 id="这里使用npx-hexo-…-的话，以后所有hexo命令都需要加上npx"><a href="#这里使用npx-hexo-…-的话，以后所有hexo命令都需要加上npx" class="headerlink" title="这里使用npx hexo … 的话，以后所有hexo命令都需要加上npx"></a>这里使用npx hexo … 的话，以后所有hexo命令都需要加上npx</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo init</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/dd/ddf2ca2f77a32aaff0c8f17b44bbe99b.png"></p>
-</li>
-<li><h5 id="生成本地的hexo页面"><a href="#生成本地的hexo页面" class="headerlink" title="生成本地的hexo页面"></a>生成本地的hexo页面</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/25/259acb6b590338700c8f61ffcc531593.png"></p>
-</li>
-<li><h5 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h5><p>浏览器输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/5f/5fde531819308103720a5c098f342092.png"></p>
-</li>
-</ol>
-<p>​		ctrl+c关闭服务器</p>
-<h3 id="上传Blog到Github"><a href="#上传Blog到Github" class="headerlink" title="上传Blog到Github"></a>上传Blog到Github</h3><h5 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改-config.yml文件"></a>修改-config.yml文件</h5><p><img src="https://static001.geekbang.org/infoq/76/76aa4fb226389c10209b17cd97f1b7d8.png"></p>
-<h5 id="打开该文件并修改内容："><a href="#打开该文件并修改内容：" class="headerlink" title="打开该文件并修改内容："></a>打开该文件并修改内容：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: 你的github地址</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/eb/eb043db3b67fa17c51096553f05cc055.png"></p>
-<h3 id="安装hexo-deployer-git-自动部署发布工具"><a href="#安装hexo-deployer-git-自动部署发布工具" class="headerlink" title="安装hexo-deployer-git 自动部署发布工具"></a>安装hexo-deployer-git 自动部署发布工具</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/a9/a94aa787c8627d7bc2d95fc3aabe211d.png"></p>
-<h5 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/ec/ec4dc5e76906c62036e61f4d083ebaad.png"></p>
-<h5 id="本地文件上传到Github"><a href="#本地文件上传到Github" class="headerlink" title="本地文件上传到Github"></a>本地文件上传到Github</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<h5 id="注意：中间会出现登录界面，复制前面生成的SSH-Token粘贴进去就好"><a href="#注意：中间会出现登录界面，复制前面生成的SSH-Token粘贴进去就好" class="headerlink" title="注意：中间会出现登录界面，复制前面生成的SSH Token粘贴进去就好"></a>注意：中间会出现登录界面，复制前面生成的SSH Token粘贴进去就好</h5><p><img src="https://static001.geekbang.org/infoq/1b/1ba83adbf958f9ed0ad0129bd843f785.png" alt="上传成功"></p>
-<h5 id="注意：网络报错多次尝试就好"><a href="#注意：网络报错多次尝试就好" class="headerlink" title="注意：网络报错多次尝试就好"></a>注意：网络报错多次尝试就好</h5><p><img src="https://static001.geekbang.org/infoq/5e/5e33beb4a80df251722f550b7ca0de88.png"></p>
-<h3 id="访问Github博客"><a href="#访问Github博客" class="headerlink" title="访问Github博客"></a>访问Github博客</h3><h5 id="浏览器网址输入"><a href="#浏览器网址输入" class="headerlink" title="浏览器网址输入"></a>浏览器网址输入</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://用户名.github.io/</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://static001.geekbang.org/infoq/aa/aa2f760148fbcbf6c3ce0b43cbe3433c.png"></p>
-<p>这一步折腾最久，做好的html网页传到Github后，用户名.github.io打不开，报错404，如图</p>
-<p><img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.Vbx2WxHa_5pDuXsBgAqjPgHaEC?w=319&h=143&c=7&r=0&o=5&dpr=1.3&pid=1.7"></p>
-<h5 id="解决：一开始试了很多网上的办法，比如点击页面中间的read-the-full-documention然后跟着里面的步骤操作，没有效果，但是检查了很多遍仓库配置都没有问题，后来发现只是workflow一直没有启动，刷新一下仓库配置就可以了"><a href="#解决：一开始试了很多网上的办法，比如点击页面中间的read-the-full-documention然后跟着里面的步骤操作，没有效果，但是检查了很多遍仓库配置都没有问题，后来发现只是workflow一直没有启动，刷新一下仓库配置就可以了" class="headerlink" title="解决：一开始试了很多网上的办法，比如点击页面中间的read the full documention然后跟着里面的步骤操作，没有效果，但是检查了很多遍仓库配置都没有问题，后来发现只是workflow一直没有启动，刷新一下仓库配置就可以了"></a>解决：一开始试了很多网上的办法，比如点击页面中间的read the full documention然后跟着里面的步骤操作，没有效果，但是检查了很多遍仓库配置都没有问题，后来发现只是workflow一直没有启动，刷新一下仓库配置就可以了</h5><ol>
-<li>打开.github.io仓库并点击Setiings</li>
-</ol>
-<p><img src="https://xxx.ilovefishc.com/album/202304/22/171456ke8m5i5wjjhw5qmd.png"></p>
-<ol start="2">
-<li>点击右侧菜单的Pages并重新选择Source和Branch，我当时配置是对的就没有改，但是保持原来的配置只是重新选择并保存一下可以刷新配置，邮箱就收到workflow启用的邮件了~</li>
-</ol>
-<p><img src="https://xxx.ilovefishc.com/album/202304/22/171450vvfwzk3i3233vssw.png"></p>
-<h3 id="博客搭建完毕"><a href="#博客搭建完毕" class="headerlink" title="博客搭建完毕"></a>博客搭建完毕</h3><p><img src="https://static001.geekbang.org/infoq/0a/0a397f64a129a210ccbebdff832de7af.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/21/hello-world/" data-id="clgrsdzge0000r0vo0413dufi" data-title="Hexo+Github搭建个人博客" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/04/21/hello-world/">Hexo+Github搭建个人博客</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+生成Github  SSH  Token注意 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">DQY</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/21/hello-world/" title="无题">无题</a><time datetime="2023-04-21T01:36:50.675Z" title="发表于 2023-04-21 09:36:50">2023-04-21</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-22T16:14:54.376Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By DQY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
