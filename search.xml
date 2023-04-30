@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用Vercel加速博客</title>
+      <link href="/post/f6bf5d88.html"/>
+      <url>/post/f6bf5d88.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vercel在全球都分布有CDN节点，比Github自带的Github Page更加稳定且访问速度更快，并且部署简单而且不用花钱</p><h2 id="Vercel注册"><a href="#Vercel注册" class="headerlink" title="Vercel注册"></a>Vercel注册</h2><p>如果你看过之前的文章：<a href="https://www.dqywy.top/post/d0d1b7a9.html">添加Twikoo实现博客在线评论</a>的话，你应该已经注册好了自己的Vercel账号</p><p>若未注册请参考<a href="https://www.dqywy.top/post/d0d1b7a9.html">添加Twikoo实现博客在线评论</a></p><p>或者自行注册：<a href="https://vercel.com/signup">https://vercel.com/signup</a></p><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>点击头像来到首页并点击添加project</p><p><img src="https://s1.ax1x.com/2023/04/30/p98K6Sg.png"></p><p>如果有你的仓库地址就可以直接import，没有的话就点击下方的Import Third-Party Git Respository并输入你的Github仓库网址(例如我的是：hellodqy.github.io)</p><p><img src="https://s1.ax1x.com/2023/04/30/p98KclQ.png"></p><p>保持默认选项点击Deploy即可</p><h2 id="修改域名"><a href="#修改域名" class="headerlink" title="修改域名"></a>修改域名</h2><p>由于Vercel的域名被墙了，所以我们需要将其修改为我们的个人域名(个人域名购买请参考<a href="https://www.dqywy.top/post/d0d1b7a9.html">添加Twikoo实现博客在线评论</a>中的申请个人域名章节)</p><p>再次回到首页，点击你新建的项目</p><p><img src="https://s1.ax1x.com/2023/04/30/p98KofU.png"></p><p>点击settings</p><p><img src="https://s1.ax1x.com/2023/05/01/p98MC1e.png"></p><p>点击Domains</p><p><img src="https://s1.ax1x.com/2023/05/01/p98MSfO.png"></p><p>在Domains填入你的个人域名</p><p><img src="https://s1.ax1x.com/2023/05/01/p98M9pD.png"></p><h2 id="DNS解析-以阿里云为例"><a href="#DNS解析-以阿里云为例" class="headerlink" title="DNS解析(以阿里云为例)"></a>DNS解析(以阿里云为例)</h2><p>Vercel一般会给出两行记录要你添加到你的DNS供应商</p><p>首页打开控制台</p><p><img src="https://s1.ax1x.com/2023/04/26/p9Ka81O.png"></p><p>点击图片中的云解析</p><p><img src="https://s1.ax1x.com/2023/04/26/p9KanB9.png"></p><p>点击你购买的域名</p><p><img src="https://s1.ax1x.com/2023/04/26/p9KamnJ.png"></p><p>点击添加记录</p><p><img src="https://s1.ax1x.com/2023/04/26/p9KaZX4.png"></p><p>按照Vercel给的格式填：</p><ol><li>Type：A</li></ol><p>​  主机记录：@</p><p>​  解析：保持默认</p><p>​  记录值：xx.xx.xx.xx</p><p>​  TTL：10分钟</p><ol start="2"><li>Type：CNAME</li></ol><p>​  主机记录：www</p><p>​  解析：保持默认</p><p>​  记录值：xxx-dns.com</p><p>​  TTL：10分钟</p><h2 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h2><p>修改完以后回到Vercel首页，打开项目</p><p><img src="https://s1.ax1x.com/2023/04/30/p98KofU.png"></p><p>点击Deployments选项</p><p><img src="https://s1.ax1x.com/2023/05/01/p98Qk2F.png"></p><p>点击带有current标识的版本最右边的三个点，点击Redeploy</p><p><img src="https://s1.ax1x.com/2023/05/01/p98QF8U.png"></p><p><img src="https://s1.ax1x.com/2023/05/01/p98QiCT.png"></p><p>部署完成耐心等待即可~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Github Page绑定个人域名</title>
       <link href="/post/fa674e5f.html"/>
       <url>/post/fa674e5f.html</url>
