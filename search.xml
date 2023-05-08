@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>for循环的新型遍历</title>
+      <link href="/post/c87cbb52.html"/>
+      <url>/post/c87cbb52.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="c-遍历容器一般是这样的"><a href="#c-遍历容器一般是这样的" class="headerlink" title="c++遍历容器一般是这样的"></a>c++遍历容器一般是这样的</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::string&gt; name = &#123;<span class="string">&quot;ljy&quot;</span>, <span class="string">&quot;wy&quot;</span>, <span class="string">&quot;wz&quot;</span>, <span class="string">&quot;dqy&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i = name.<span class="built_in">begin</span>(); i != name.<span class="built_in">end</span>(); i++)<span class="comment">// 这里auto替换了std::vector&lt;std::string&gt;::iterator</span></span><br><span class="line">    std::cout &lt;&lt; *i &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure><h4 id="在c-11中我们可以简化成这样"><a href="#在c-11中我们可以简化成这样" class="headerlink" title="在c++11中我们可以简化成这样"></a>在c++11中我们可以简化成这样</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::string&gt; name = &#123;<span class="string">&quot;ljy&quot;</span>, <span class="string">&quot;wy&quot;</span>, <span class="string">&quot;wz&quot;</span>, <span class="string">&quot;dqy&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : name)<span class="comment">// 注意，这里auto替换的是std::string，即直接将容器中的每个元素赋给了i进行遍历</span></span><br><span class="line">    std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure><p>不懂auto用法的小伙伴可以参考：<a href="">auto用法</a></p><h4 id="另外，也可以使用std-for-each实现相同功能，注意要添加头文件"><a href="#另外，也可以使用std-for-each实现相同功能，注意要添加头文件" class="headerlink" title="另外，也可以使用std::for_each实现相同功能，注意要添加头文件"></a>另外，也可以使用std::for_each实现相同功能，注意要添加<algorithm>头文件</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义操作，挨个传入容器元素</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">output</span><span class="params">(std::string s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span>  <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">std::vector&lt;std::string&gt; name = &#123; <span class="string">&quot;ljy&quot;</span>, <span class="string">&quot;wy&quot;</span>, <span class="string">&quot;wz&quot;</span>, <span class="string">&quot;dqy&quot;</span> &#125;;</span><br><span class="line">std::for_each(name.<span class="built_in">begin</span>(), name.<span class="built_in">end</span>(), output);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>auto用法</title>
+      <link href="/post/77858f66.html"/>
+      <url>/post/77858f66.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>auto会根据赋给变量的初值自动填充变量类型，当变量类型很长的时候尤其好用</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>（1）使用auto必须要赋初值，且初值不能是模板或函数等不确定类型，因为需要根据初值判断变量类型</p><p>（2）使用auto同时定义几个变量要求这几个变量的初值类型相同</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> a = <span class="number">3</span>, b = <span class="string">&#x27;3&#x27;</span>, c = <span class="string">&quot;3&quot;</span>;<span class="comment">// 这样不行，初值类型不同只能分开写</span></span><br></pre></td></tr></table></figure><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::string&gt; name = &#123;<span class="string">&quot;ljy&quot;</span>, <span class="string">&quot;wy&quot;</span>, <span class="string">&quot;wz&quot;</span>, <span class="string">&quot;dqy&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i = name.<span class="built_in">begin</span>(); i != name.<span class="built_in">end</span>(); i++)<span class="comment">// 这里auto替换了std::vector&lt;std::string&gt;::iterator</span></span><br><span class="line">    std::cout &lt;&lt; *i &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure><h3 id="上述循环根据c-11标准也可以这样写"><a href="#上述循环根据c-11标准也可以这样写" class="headerlink" title="上述循环根据c++11标准也可以这样写"></a>上述循环根据c++11标准也可以这样写</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::string&gt; name = &#123;<span class="string">&quot;ljy&quot;</span>, <span class="string">&quot;wy&quot;</span>, <span class="string">&quot;wz&quot;</span>, <span class="string">&quot;dqy&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : name)<span class="comment">// 注意，这里auto替换的是std::string，即直接将容器中的每个元素赋给了i进行遍历</span></span><br><span class="line">    std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure><p>今天第一次看到这样的用法，觉得非常方便^_^</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>为什么推荐用++i</title>
+      <link href="/post/415de4d5.html"/>
+      <url>/post/415de4d5.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i)</span><br></pre></td></tr></table></figure><p>以前看别人这么写都不太在意，今天偶然瞥到有说<code>i++</code>比<code>++i</code>效率更高</p><h2 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h2><p>于是我去找了一下两种运算重载方法：</p><h3 id="（1）i"><a href="#（1）i" class="headerlink" title="（1）i++"></a>（1）i++</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后置++运算符重载</span></span><br><span class="line">Num&amp; <span class="keyword">operator</span> ++(<span class="type">int</span> n)<span class="comment">// int n是为了与重载前置++区分开</span></span><br><span class="line">&#123;</span><br><span class="line">        Num temp = *<span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">this</span>-&gt;num++;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="2-i"><a href="#2-i" class="headerlink" title="(2) ++i"></a>(2) ++i</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前置++运算符重载</span></span><br><span class="line">test&amp; <span class="keyword">operator</span> ++()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">this</span>-&gt;num++;</span><br><span class="line"><span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>对比可以发现，<code>++i</code>比<code>i++</code>省略了一步储存原变量的过程</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c++ sort函数</title>
       <link href="/post/3216d44c.html"/>
       <url>/post/3216d44c.html</url>
@@ -35,6 +116,14 @@
       
         <content type="html"><![CDATA[<p>【问题描述】</p><p>　　给定n个整数，请统计出每个整数出现的次数，按出现次数从多到少的顺序输出。 </p><p>【输入形式】</p><p>　　输入的第一行包含一个整数n，表示给定数字的个数。<br>　　第二行包含n个整数，相邻的整数之间用一个空格分隔，表示所给定的整数。 </p><p>【输出形式】</p><p>　　输出多行，每行包含两个整数，分别表示一个给定的整数和它出现的次数。按出现次数递减的顺序输出。如果两个整数出现的次数一样多，则先输出值较小的，然后输出值较大的。</p><p>【样例输入】</p><p>　　12<br>　　5 2 3 3 1 3 4 2 5 2 3 5 </p><p>【样例输出】</p><p>　　3 4<br>　　2 3<br>　　5 3<br>　　1 1<br>　　4 1 </p><p>【评分标准】</p><p>　　<strong>评测用例规模与约定</strong><br>　　1 ≤ n ≤ 1000，给出的数都是不超过1000的非负整数。</p><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><h3 id="（1）将每个数字与其出现频率绑定定义为Pair类，定义Pair类数组"><a href="#（1）将每个数字与其出现频率绑定定义为Pair类，定义Pair类数组" class="headerlink" title="（1）将每个数字与其出现频率绑定定义为Pair类，定义Pair类数组;"></a>（1）将每个数字与其出现频率绑定定义为Pair类，定义Pair类数组;</h3><h3 id="（2）接收输入，判断输入数字是否存在，存在则对应数字频率加一，不存在则写入数字并频率加一"><a href="#（2）接收输入，判断输入数字是否存在，存在则对应数字频率加一，不存在则写入数字并频率加一" class="headerlink" title="（2）接收输入，判断输入数字是否存在，存在则对应数字频率加一，不存在则写入数字并频率加一;"></a>（2）接收输入，判断输入数字是否存在，存在则对应数字频率加一，不存在则写入数字并频率加一;</h3><h3 id="（3）sort函数自定义排序"><a href="#（3）sort函数自定义排序" class="headerlink" title="（3）sort函数自定义排序"></a>（3）sort函数自定义排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000<span class="comment">// 测试请将N改小</span></span></span><br><span class="line"><span class="keyword">using</span>  <span class="keyword">namespace</span>  std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Pair</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="type">int</span> num = <span class="number">0</span>;<span class="comment">// 数字</span></span><br><span class="line"><span class="type">int</span> fre = <span class="number">0</span>;<span class="comment">// 频率</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">inArray</span><span class="params">(<span class="type">int</span> n, Pair *p, <span class="type">int</span> &amp;pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pos; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (p[i].num == n)</span><br><span class="line">&#123;</span><br><span class="line">p[i].fre++;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;<span class="comment">// 该数字已存在</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p[pos].num = n;</span><br><span class="line">p[pos].fre++;</span><br><span class="line">pos++;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;<span class="comment">// 该数字不存在</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp_fre</span><span class="params">(Pair x, Pair y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (x.fre == y.fre)</span><br><span class="line"><span class="keyword">return</span> x.num &lt; y.num;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> x.fre &gt; y.fre;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">out</span><span class="params">(Pair *p, <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; p[i].num &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; p[i].fre &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initial</span><span class="params">(Pair *p, <span class="type">int</span> n, <span class="type">int</span> &amp;pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="type">int</span> temp; </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">cin &gt;&gt; temp;</span><br><span class="line"><span class="built_in">inArray</span>(temp, p, pos);<span class="comment">// 判断读取的数字是否已经存在，pos表示当前pair数组中存放的结果总数</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span>  <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="type">int</span> n, pos = <span class="number">0</span>;<span class="comment">// pos对应下一个数字存放的下标</span></span><br><span class="line">Pair pair[N];</span><br><span class="line">cin &gt;&gt; n;<span class="comment">// 数字个数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">initial</span>(pair, n, pos);</span><br><span class="line"><span class="built_in">sort</span>(pair, pair + pos, cmp_fre);</span><br><span class="line"><span class="built_in">out</span>(pair, pos);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="如果有更好的写法欢迎在评论区给出噢"><a href="#如果有更好的写法欢迎在评论区给出噢" class="headerlink" title="如果有更好的写法欢迎在评论区给出噢^_^"></a>如果有更好的写法欢迎在评论区给出噢^_^</h3>]]></content>
       
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 刷题 </category>
+          
+      </categories>
       
       
         <tags>
@@ -234,6 +323,8 @@
           
           <category> c++ </category>
           
+          <category> 刷题 </category>
+          
       </categories>
       
       
@@ -258,6 +349,8 @@
       <categories>
           
           <category> c++ </category>
+          
+          <category> 刷题 </category>
           
       </categories>
       
