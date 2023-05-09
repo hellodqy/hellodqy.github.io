@@ -78,7 +78,7 @@
     text-shadow: 0 0 2px var(rgb(179, 71, 241)) !important;
 }
 
-/*To Do list*/
+/*待做清单*/
 #todolist-box {
     margin: 0 10px;
 }
@@ -184,7 +184,7 @@ li.todolist-li {
 
 /*点赞*/
 .orlike {
-    color: rgba(255, 255, 255);
+    color: rgb(232, 138, 138);
     font-size: 26px !important;
     line-height: 2;
     text-shadow: 5px 5px 5px #2ed0d9fc;
