@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>C++字符串分割的常用方法</title>
-      <link href="/post/54c3fa40.html"/>
-      <url>/post/54c3fa40.html</url>
+      <title>c++迭代器常用的辅助函数</title>
+      <link href="/post/8c139f3f.html"/>
+      <url>/post/8c139f3f.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="迭代器的辅助函数"><a href="#迭代器的辅助函数" class="headerlink" title="迭代器的辅助函数"></a>迭代器的辅助函数</h3><p>STL 中有用于操作迭代器的三个函数模板，它们是：</p><ul><li><p>advance(p, n)：使迭代器 p 向前或向后移动 n 个元素</p></li><li><p>distance(p, q)：计算两个迭代器之间的距离，即迭代器 p 经过多少次 + + 操作后和迭代器 q 相等。如果调用时 p 已经指向 q 的后面，则这个函数会陷入死循环</p></li><li><p>iter_swap(p, q)：交换容器中两个迭代器指向的位置的值</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">5</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    list &lt;<span class="type">int</span>&gt; <span class="built_in">lst</span>(a, a + <span class="number">5</span>);</span><br><span class="line">    list &lt;<span class="type">int</span>&gt;::iterator p = lst.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="built_in">advance</span>(p, <span class="number">2</span>);  <span class="comment">//p向后移动两个元素，指向3</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;1)&quot;</span> &lt;&lt; *p &lt;&lt; endl;  <span class="comment">//输出 1)3</span></span><br><span class="line">    <span class="built_in">advance</span>(p, <span class="number">-1</span>);  <span class="comment">//p向前移动一个元素，指向2</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;2)&quot;</span> &lt;&lt; *p &lt;&lt; endl;  <span class="comment">//输出 2)2</span></span><br><span class="line">    list&lt;<span class="type">int</span>&gt;::iterator q = lst.<span class="built_in">end</span>();  <span class="comment">// end指向的是最后一个元素的下一个位置</span></span><br><span class="line">    q--;  <span class="comment">// q 指向 5</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;3)&quot;</span> &lt;&lt; <span class="built_in">distance</span>(p, q) &lt;&lt; endl;  <span class="comment">//输出 3)3</span></span><br><span class="line">    <span class="built_in">iter_swap</span>(p, q); <span class="comment">// 交换容器中两个位置的值</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;4)&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (p = lst.<span class="built_in">begin</span>(); p != lst.<span class="built_in">end</span>(); ++p)</span><br><span class="line">        cout &lt;&lt; *p &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/05/12/p9yhLTg.png"></p></li></ul>]]></content>
       
       
       <categories>
@@ -22,7 +22,34 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++迭代器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C++字符串分割的常用方法</title>
+      <link href="/post/54c3fa40.html"/>
+      <url>/post/54c3fa40.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="晚点再写"><a href="#晚点再写" class="headerlink" title="晚点再写~"></a>晚点再写~</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 实用函数 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++字符串 </tag>
             
         </tags>
       
@@ -49,7 +76,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++容器 </tag>
             
         </tags>
       
@@ -62,7 +89,7 @@
       <link href="/post/6e85eca8.html"/>
       <url>/post/6e85eca8.html</url>
       
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>参考自：<a href="http://c.biancheng.net/view/338.html">C++迭代器（STL迭代器）iterator详解 (biancheng.net)</a></p><h2 id="迭代器种类"><a href="#迭代器种类" class="headerlink" title="迭代器种类"></a>迭代器种类</h2><ol><li><p>正向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::iterator  迭代器名;</span><br></pre></td></tr></table></figure></li><li><p>常量正向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::const_iterator 迭代器名;</span><br></pre></td></tr></table></figure></li><li><p>反向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::reverse_iterator 迭代器名;</span><br></pre></td></tr></table></figure></li><li><p>常量反向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::const_reverse_iterator 迭代器名;</span><br></pre></td></tr></table></figure></li></ol><h2 id="迭代器使用"><a href="#迭代器使用" class="headerlink" title="迭代器使用"></a>迭代器使用</h2><p>迭代器类似于指针，可以指向容器中的不同元素，<code>*迭代器</code>就代表元素本身；常量迭代器无法修改元素，非常量迭代器可以修改元素</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>参考自：<a href="http://c.biancheng.net/view/338.html">C++迭代器（STL迭代器）iterator详解 (biancheng.net)</a></p><h2 id="迭代器种类"><a href="#迭代器种类" class="headerlink" title="迭代器种类"></a>迭代器种类</h2><ol><li><p>正向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::iterator  迭代器名;</span><br></pre></td></tr></table></figure></li><li><p>常量正向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::const_iterator 迭代器名;</span><br></pre></td></tr></table></figure></li><li><p>反向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::reverse_iterator 迭代器名;</span><br></pre></td></tr></table></figure></li><li><p>常量反向迭代器</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">容器类名::const_reverse_iterator 迭代器名;</span><br></pre></td></tr></table></figure></li></ol><h2 id="迭代器使用"><a href="#迭代器使用" class="headerlink" title="迭代器使用"></a>迭代器使用</h2><p>迭代器类似于指针，可以指向容器中的不同元素并进行修改(常量迭代器无法修改)，<code>*迭代器</code>就代表元素本身</p><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">vector&lt;string&gt; flowers = &#123;<span class="string">&quot;LJY&quot;</span>, <span class="string">&quot;WY&quot;</span>, <span class="string">&quot;WZ&quot;</span>, <span class="string">&quot;DQY&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义正向迭代器</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;正向迭代器: &quot;</span> &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;修改前: &quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="keyword">for</span> (vector&lt;string&gt;::iterator iter = flowers.<span class="built_in">begin</span>(); iter != flowers.<span class="built_in">end</span>(); ++iter)<span class="comment">// 使用前置++效率更高</span></span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; *iter &lt;&lt; endl;</span><br><span class="line"><span class="built_in">transform</span>((*iter).<span class="built_in">begin</span>(), (*iter).<span class="built_in">end</span>(), (*iter).<span class="built_in">begin</span>(), tolower);<span class="comment">// 利用迭代器修改元素</span></span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;修改后: &quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="keyword">for</span> (vector&lt;string&gt;::iterator iter = flowers.<span class="built_in">begin</span>(); iter != flowers.<span class="built_in">end</span>(); ++iter)<span class="comment">// 使用前置++效率更高</span></span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; *iter &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义反向迭代器</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;\n反向迭代器: &quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="keyword">for</span> (vector&lt;string&gt;::reverse_iterator iter = flowers.<span class="built_in">rbegin</span>(); iter != flowers.<span class="built_in">rend</span>(); iter++)</span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; *iter &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/05/12/p9yf4MV.png"></p><h3 id="功能分类"><a href="#功能分类" class="headerlink" title="功能分类"></a>功能分类</h3><ol><li><p>正向迭代器，支持以下操作：++p，p++，*p。此外，两个正向迭代器可以互相赋值，还可以用<code>==</code>和<code>!=</code>运算符进行比较。</p></li><li><p>双向迭代器，具有正向迭代器的全部功能。除此之外，若 p 是一个双向迭代器，则<code>--p</code>和<code>p--</code>都是使得 p 朝和<code>++p</code>相反的方向移动。</p></li><li><p>随机访问迭代器。具有双向迭代器的全部功能。若 p 是一个随机访问迭代器，i 是一个整型变量或常量，则 p 还支持以下操作：</p></li></ol><ul><li>p+&#x3D;i：使得 p 往后移动 i 个元素。</li><li>p-&#x3D;i：使得 p 往前移动 i 个元素。</li><li>p+i：返回 p 后面第 i 个元素的迭代器。</li><li>p-i：返回 p 前面第 i 个元素的迭代器。</li><li><strong>p[i]：返回 p 后面第 i 个元素的引用。</strong></li></ul><p>此外，两个随机访问迭代器 p1、p2 还可以用 &lt;、&gt;、&lt;&#x3D;、&gt;&#x3D; 运算符进行比较。<code>p1&lt;p2</code>的含义是：p1 经过若干次（至少一次）<code>++</code>操作后，就会等于 p2。其他比较方式的含义与此类似</p><p>对于两个随机访问迭代器 p1、p2，表达式<code>p2-p1</code>也是有定义的，其返回值是 p2 所指向元素和 p1 所指向元素的序号之差（也可以说是 p2 和 p1 之间的元素个数<strong>加一</strong>）</p><h3 id="不同容器的迭代器的功能"><a href="#不同容器的迭代器的功能" class="headerlink" title="不同容器的迭代器的功能"></a>不同容器的迭代器的功能</h3><table><thead><tr><th>容器或容器适配器</th><th>迭代器功能</th></tr></thead><tbody><tr><td>vector</td><td>随机访问</td></tr><tr><td>deque</td><td>随机访问</td></tr><tr><td>list</td><td>双向</td></tr><tr><td>set &#x2F; multiset</td><td>双向</td></tr><tr><td>map &#x2F; multimap</td><td>双向</td></tr><tr><td>stack</td><td>不支持迭代器</td></tr><tr><td>queue</td><td>不支持迭代器</td></tr><tr><td>priority_queue</td><td>不支持迭代器</td></tr></tbody></table>]]></content>
       
       
       <categories>
@@ -76,7 +103,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++迭代器 </tag>
             
         </tags>
       
@@ -130,7 +157,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++语法 </tag>
             
         </tags>
       
@@ -292,7 +319,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++语法 </tag>
             
         </tags>
       
@@ -319,7 +346,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++语法 </tag>
             
         </tags>
       
@@ -346,7 +373,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++语法 </tag>
             
         </tags>
       
@@ -373,7 +400,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++实用函数 </tag>
             
         </tags>
       
@@ -400,7 +427,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++刷题 </tag>
             
         </tags>
       
@@ -616,7 +643,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++刷题 </tag>
             
         </tags>
       
@@ -643,7 +670,7 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> c++刷题 </tag>
             
         </tags>
       
