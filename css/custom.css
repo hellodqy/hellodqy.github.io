@@ -78,6 +78,7 @@
     text-shadow: 0 0 2px var(rgb(179, 71, 241)) !important;
 }
 
+
 /*待做清单*/
 #todolist-box {
     margin: 0 10px;
@@ -263,6 +264,7 @@ li.todolist-li {
 }
 
 /*FOOTER*/
+
 
 /* 自定义底部  start */
 #ft {
@@ -603,4 +605,236 @@ li.todolist-li {
     border-top-color: #444;
     left: 50%;
     transform: translate(-50%, -48px);
+}
+
+
+/*目录效果*/
+
+@media screen and (max-width: 768px) {
+    #aside-content .card-widget:not(#card-toc) {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 901px) {
+    #aside-content #card-toc {
+        right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #aside-content #card-toc {
+        position: fixed;
+        right: -100%;
+        bottom: 30px;
+        z-index: 100;
+        max-height: calc(100% - 60px);
+        width: 300px;
+        opacity: 0;
+        transform-origin: right bottom;
+    }
+}
+
+#aside-content #card-toc .toc-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+}
+
+@media screen and (max-width: 900px) {
+    #aside-content #card-toc .toc-content {
+        max-height: calc(100vh - 140px);
+    }
+}
+
+#aside-content #card-toc .toc-content .toc-child {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    #aside-content #card-toc .toc-content .toc-child {
+        display: block !important;
+    }
+}
+
+#aside-content #card-toc .toc-content .toc-item.active .toc-child {
+    display: block;
+}
+
+#aside-content #card-toc .toc-content li,
+#aside-content #card-toc .toc-content ol {
+    list-style: none;
+}
+
+#aside-content #card-toc .toc-content>ol {
+    padding: 0px !important;
+}
+
+#aside-content #card-toc .toc-content ol {
+    margin: 0px;
+    padding-left: 0.4rem;
+}
+
+#aside-content #card-toc .toc-content .toc-link {
+    display: block;
+    padding-left: 0.3rem;
+    border-left: 3px solid transparent;
+    color: var(--toc-link-color);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#aside-content #card-toc .toc-content .toc-link.active {
+    border-left-color: rgb(0, 97, 204);
+    background: rgb(0, 121, 255);
+    color: rgb(255, 255, 255);
+}
+
+#aside-content #card-toc .toc-content::before {
+    position: absolute;
+    top: 0.6rem;
+    right: 1.2rem;
+    color: rgb(169, 169, 169);
+    content: attr(progress-percentage);
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+#aside-content #card-toc .toc-content .toc-link.active {
+    line-height: 1.2;
+    border-radius: 12px;
+    border-left-color: var(--heo-hovertext);
+    background-color: var(--heo-card-bg);
+    color: var(--heo-lighttext);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+[data-theme="dark"].toc .toc-item.active .toc-link .toc-text {
+    color: var(--heo-white);
+}
+
+#aside-content #card-toc .toc-content .toc-item.active .toc-link {
+    opacity: 1;
+    border-radius: 8px;
+}
+
+#aside-content #card-toc .toc-content .toc-link {
+    line-height: 1.2;
+    padding: 8px;
+    border-left: 0px solid transparent;
+    border-radius: 12px;
+    color: var(--heo-secondtext);
+    cursor: default;
+}
+
+#aside-content #card-toc .toc-content .toc-link:not(.active) span {
+    opacity: 0.6;
+    cursor: pointer;
+    filter: blur(1px);
+    transition: all 0.3s ease 0s;
+}
+
+#aside-content #card-toc:hover .toc-content .toc-link:not(.active) span {
+    filter: blur(0px);
+    opacity: 1;
+}
+
+#aside-content #card-toc .toc-content .toc-link:not(.active) span:hover {
+    color: var(--heo-lighttext);
+}
+
+#card-toc {
+    padding: 0.5rem !important;
+}
+
+#aside-content #card-toc .toc-content::before {
+    display: none;
+}
+
+
+/*文章波浪效果*/
+/* 波浪css */
+.main-hero-waves-area {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+    z-index: 5;
+}
+
+.waves-area .waves-svg {
+    width: 100%;
+    height: 5rem;
+}
+
+/* Animation */
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: #f7f9febd;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: #f7f9fe82;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: #f7f9fe36;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: #f7f9fe;
+}
+
+/* 黑色模式背景 */
+[data-theme="dark"] .parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: #18171dc8;
+}
+
+[data-theme="dark"] .parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: #18171d80;
+}
+
+[data-theme="dark"] .parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: #18171d3e;
+}
+
+[data-theme="dark"] .parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: #18171d;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves-area .waves-svg {
+        height: 40px;
+        min-height: 40px;
+    }
 }
