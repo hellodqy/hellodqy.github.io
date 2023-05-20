@@ -5645,7 +5645,9 @@ blockquote.pullquote.right {
   --scrollbar-color: #1f1f1f;
   --timeline-bg: #1f1f1f;
 }
-[data-theme='dark'] #web_bg:before,
+[data-theme='dark'] #web_bg {
+  background: url(https://s1.ax1x.com/2023/05/07/p9wApdA.jpg);
+}
 [data-theme='dark'] #footer:before,
 [data-theme='dark'] #page-header:before {
   position: absolute;

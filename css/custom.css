@@ -271,8 +271,7 @@ li.todolist-li {
     max-width: 1200px;
     margin: 0 auto 12px;
     display: flex;
-    color: rgba(0, 0, 0, 0.8) !important;
-    /*修改左右侧文字的颜色*/
+    /*color: rgba(56, 130, 167, 0.8) !important;*/
     text-align: left;
     flex-wrap: wrap;
 }
@@ -919,4 +918,105 @@ body::-webkit-scrollbar {
         height: 40em;
         max-width: 50em;
     }
+}
+
+
+/* 分类页样式 began */
+.category-list-link:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, .12), 0 0 6px 0 rgba(104, 104, 105, 0.1);
+    border-radius: 15px;
+    padding: 6px 16px;
+    margin-left: 0px;
+    font-size: 16px;
+    transition-duration: 0.15s;
+    /*display: flex;*/
+}
+
+/* 分类页样式 end */
+
+
+/* 404页面美化 */
+#error-wrap {
+    top: 40%;
+}
+
+#error-wrap .error-content .error-info .error_title {
+    margin-top: -3rem !important;
+}
+
+#error-wrap .error-content {
+    box-shadow: none !important;
+    border-radius: 12px;
+    background: var(--harris-card-bg) !important;
+}
+
+.aside-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    bottom: 0px;
+    position: absolute;
+    padding: 20px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.aside-list .aside-list-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 1500px;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .aside-list .aside-list-group {
+        margin: 0px 17%; //17% 适合最新文章数为5个，10% 适合6个
+    }
+}
+
+.aside-list .aside-list-item {
+    padding: 10px;
+}
+
+.aside-list .aside-list-item img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.aside-list .aside-list-item img:hover {
+    transform: scale(1.1);
+}
+
+.aside-list .aside-list-item .thumbnail {
+    overflow: hidden;
+    width: 230px;
+    height: 143px;
+    display: flex;
+    background: var(--harris-card-bg);
+}
+
+.aside-list .aside-list-item .content .title {
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    padding-top: 10px;
+    color: var(--harris-fontcolor);
+}
+
+.aside-list .aside-list-item .content time {
+    display: none;
+}
+
+#error-wrap .error-content .error-info a {
+    border-radius: 10px;
+    overflow: hidden;
 }
