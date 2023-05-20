@@ -934,3 +934,81 @@ body::-webkit-scrollbar {
 }
 
 /* 分类页样式 end */
+
+
+/*阿里图标库*/
+@font-face {
+    font-family: "iconfont";
+    /* Project id 4078305 */
+    src: url('//at.alicdn.com/t/c/font_4078305_0smxyb0nxdue.woff2?t=1684594649303') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4078305_0smxyb0nxdue.woff?t=1684594649303') format('woff'),
+        url('//at.alicdn.com/t/c/font_4078305_0smxyb0nxdue.ttf?t=1684594649303') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 18px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-faxian1:before {
+    content: "\e686";
+}
+
+.icon-qiandao:before {
+    content: "\e687";
+}
+
+.icon-jilu:before {
+    content: "\e688";
+}
+
+.icon-guanzhu:before {
+    content: "\e689";
+}
+
+.icon-fensi:before {
+    content: "\e68a";
+}
+
+.icon-wode:before {
+    content: "\e68b";
+}
+
+.icon-zhuye:before {
+    content: "\e68c";
+}
+
+.icon-sousuo:before {
+    content: "\e68d";
+}
+
+.icon-bangzhushouce:before {
+    content: "\e63c";
+}
+
+.icon-biaoqian:before {
+    content: "\e63d";
+}
+
+.icon-daohang:before {
+    content: "\e63e";
+}
+
+.icon-faxian:before {
+    content: "\e63f";
+}
+
+.icon-shijian:before {
+    content: "\e644";
+}
+
+.icon-xiewenzhang:before {
+    content: "\e645";
+}
+
+.icon-zhishipai:before {
+    content: "\e646";
+}
