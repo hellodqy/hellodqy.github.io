@@ -316,7 +316,9 @@ li.todolist-li {
 
 .btn-xz {
     display: block;
-    background-color: var(--btn-bg);
+    /* background-color: var(--btn-bg);
+    color: var(--btn-color); */
+    background-color: #3d6bb9;
     color: var(--btn-color);
     text-align: center;
     line-height: 2.4;
@@ -330,7 +332,7 @@ li.todolist-li {
 }
 
 .btn-xz-box:hover .btn-xz {
-    background-color: #355da1;
+    background-color: #2587dd;
 }
 
 .t-top .t-t-r {
