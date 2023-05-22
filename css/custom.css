@@ -1584,7 +1584,7 @@ center#name-container {
 
 @media screen and (min-width: 768px) {
     .aside-list .aside-list-group {
-        margin: 0px 17%; //17% 适合最新文章数为5个，10% 适合6个
+        margin: 0px 17%;
     }
 }
 
