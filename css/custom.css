@@ -265,6 +265,7 @@ li.todolist-li {
 
 
 /* 自定义页脚 */
+/* 下面的color改为auto可以在白天模式设置字体为黑色，黑夜模式为白色 */
 #ft {
     max-width: 1200px;
     margin: 0 auto 12px;
@@ -864,40 +865,6 @@ li.todolist-li {
 }
 
 
-/* 滚动条 */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: rgba(73, 177, 245, 0.2);
-    border-radius: 2em;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #49b1f5;
-    background-image: -webkit-linear-gradient(45deg,
-            rgba(255, 255, 255, 0.4) 25%,
-            transparent 25%,
-            transparent 50%,
-            rgba(255, 255, 255, 0.4) 50%,
-            rgba(255, 255, 255, 0.4) 75%,
-            transparent 75%,
-            transparent);
-    border-radius: 2em;
-}
-
-::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-
-::-moz-selection {
-    color: #fff;
-    background-color: #49b1f5;
-}
-
-
 /*鼠标样式*/
 body {
     cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
@@ -1070,40 +1037,9 @@ img {
     content: "\e646";
 }
 
-
-/* 导航栏重做初级 */
-/* 参考：https://www.fomal.cc/posts/eec9786.html */
-/* 一级菜单居中 */
-#nav .menus_items {
-    position: absolute !important;
-    width: fit-content !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-}
-
-/* 子菜单横向展示 */
-#nav .menus_items .menus_item:hover .menus_item_child {
-    display: flex !important;
-}
-
-/* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
-.menus_items .menus_item:nth-child(3) .menus_item_child {
-    left: -40px;
-}
-
-/* 顶栏常驻 */
-.nav-fixed #nav {
-    transform: translateY(58px) !important;
-    -webkit-transform: translateY(58px) !important;
-    -moz-transform: translateY(58px) !important;
-    -ms-transform: translateY(58px) !important;
-    -o-transform: translateY(58px) !important;
-}
-
-#nav {
-    transition: none !important;
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -ms-transition: none !important;
-    -o-transition: none !important;
+/* 头像卡片悬浮彩带 */
+/* 信息卡片彩带 */
+.author_top:hover {
+    background: url(https://tuchuang.voooe.cn/images/2023/01/02/snow.gif);
+    background-size: cover;
 }
