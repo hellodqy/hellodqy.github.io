@@ -1043,3 +1043,42 @@ img {
     background: url(https://tuchuang.voooe.cn/images/2023/01/02/snow.gif);
     background-size: cover;
 }
+
+/* 头像卡片背景图 */
+[data-theme="light"] #aside-content>.card-widget.card-info {
+    background-image: url(https://s1.ax1x.com/2023/05/30/p9jgHH0.png);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+}
+
+[data-theme="dark"] #aside-content>.card-widget.card-info {
+    background-image: url(https://s1.ax1x.com/2023/05/30/p9jgqEV.png);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+}
+
+
+/* 帧率检测 */
+#fps {
+    position: fixed;
+    /* 指定位置 */
+    left: 10px;
+    bottom: 10px;
+    z-index: 1919810;
+}
+
+[data-theme="light"] #fps {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: var(--backdrop-filter);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+[data-theme="dark"] #fps {
+    background-color: rgba(0, 0, 0, 0.72);
+    backdrop-filter: var(--backdrop-filter);
+    padding: 4px;
+    border-radius: 4px;
+}
