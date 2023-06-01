@@ -20,8 +20,8 @@ function createtime() {
     let currentTimeHtml = "";
     (currentTimeHtml =
         hnum < 18 && hnum >= 9
-            ? `<img class='boardsign' src='https://img.shields.io/badge/DQY&WY%E3%81%AE%E5%B0%8F%E7%AA%9D-%E7%A3%95%E7%9D%A1%E7%9D%80%E5%91%A2-ff69b4?logo=westerndigital&style=plastic' title='没事就多陪陪女朋友~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-            : `<img class='boardsign' src='https://img.shields.io/badge/DQY&WY%E3%81%AE%E5%B0%8F%E7%AA%9D-%E7%A3%95%E7%9D%A1%E7%9D%80%E5%91%A2-ff69b4?logo=westerndigital&style=plastic' title='没事儿就多陪陪女朋友~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
+            ? `<img class='boardsign' src='https://img.shields.io/badge/DQY&WY%E3%81%AE%E5%B0%8F%E7%AA%9D-%E7%A3%95%E7%9D%A1%E7%9D%80%E5%91%A2-ff69b4?logo=westerndigital&style=plastic' title='没事就多陪陪女朋友~'><br> <div style="font-size:13px;font-weight:bold">本站已经运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
+            : `<img class='boardsign' src='https://img.shields.io/badge/DQY&WY%E3%81%AE%E5%B0%8F%E7%AA%9D-%E7%A3%95%E7%9D%A1%E7%9D%80%E5%91%A2-ff69b4?logo=westerndigital&style=plastic' title='没事儿就多陪陪女朋友~'><br> <div style="font-size:13px;font-weight:bold">本站已经运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
         document.getElementById("workboard") &&
         (document.getElementById("workboard").innerHTML = currentTimeHtml);
 }

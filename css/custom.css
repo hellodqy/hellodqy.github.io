@@ -962,16 +962,18 @@ img {
 
 /*阿里图标库*/
 @font-face {
-    font-family: "iconfont";
-    /* Project id 4078305 */
-    src: url('//at.alicdn.com/t/c/font_4078305_0smxyb0nxdue.woff2?t=1684594649303') format('woff2'),
-        url('//at.alicdn.com/t/c/font_4078305_0smxyb0nxdue.woff?t=1684594649303') format('woff'),
-        url('//at.alicdn.com/t/c/font_4078305_0smxyb0nxdue.ttf?t=1684594649303') format('truetype');
+    font-family: 'iconfont';
+    src: url('/fonts/iconfont.eot');
+    src: url('/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/iconfont.woff2') format('woff2'),
+        url('/fonts/iconfont.woff') format('woff'),
+        url('/fonts/iconfont.ttf') format('truetype'),
+        url('/fonts/iconfont.svg#iconfont') format('svg');
 }
 
 .iconfont {
     font-family: "iconfont" !important;
-    font-size: 18px;
+    font-size: 21px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1036,6 +1038,8 @@ img {
 .icon-zhishipai:before {
     content: "\e646";
 }
+
+
 
 /* 头像卡片悬浮彩带 */
 /* 信息卡片彩带 */
