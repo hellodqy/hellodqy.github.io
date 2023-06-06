@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>c++文件流操作</title>
+      <link href="/post/50f93117.html"/>
+      <url>/post/50f93117.html</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">string name, school;</span><br><span class="line"><span class="type">int</span> age, temp;</span><br><span class="line"><span class="type">char</span> ch;</span><br><span class="line"><span class="function">ofstream <span class="title">fout</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>, ios::out | ios::trunc)</span></span>;<span class="comment">// 不存在会直接创建</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;姓名: &quot;</span>;</span><br><span class="line">cin &gt;&gt; name;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;年龄: &quot;</span>;</span><br><span class="line">cin &gt;&gt; age;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;学校: &quot;</span>;</span><br><span class="line">cin &gt;&gt; school;</span><br><span class="line">fout &lt;&lt; name &lt;&lt; endl;</span><br><span class="line">fout &lt;&lt; age &lt;&lt; endl;</span><br><span class="line">fout &lt;&lt; school &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;信息已写入文件!&quot;</span> &lt;&lt; endl;</span><br><span class="line">fout.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">ifstream fin;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;\n读取文件...&quot;</span> &lt;&lt; endl;</span><br><span class="line">fin.<span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>, ios::in);</span><br><span class="line">fin &gt;&gt; name;</span><br><span class="line">fin &gt;&gt; age;</span><br><span class="line">fin &gt;&gt; school;</span><br><span class="line"><span class="comment">//fin.seekg(10);// 换行使用CRLF，占两个字节</span></span><br><span class="line"><span class="comment">//fin &gt;&gt; ch;</span></span><br><span class="line">fin.<span class="built_in">close</span>();</span><br><span class="line"><span class="comment">//cout &lt;&lt; ch;</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;姓名: &quot;</span> &lt;&lt; name &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;年龄: &quot;</span> &lt;&lt; age &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;学校：&quot;</span> &lt;&lt; school &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;读取文件结束!&quot;</span> &lt;&lt; endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 实用语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++实用语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>流操作实现字符串与数字相互转换</title>
+      <link href="/post/7fa1f186.html"/>
+      <url>/post/7fa1f186.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>c++课学到的，超级实用~支持各种类型的数字与字符串之间的转换，下面以<code>int</code>和<code>double</code>类型举例</p><h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br></pre></td></tr></table></figure><h2 id="模板函数"><a href="#模板函数" class="headerlink" title="模板函数"></a>模板函数</h2><p><code>数字-&gt;字符串</code>的模板函数：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> string <span class="title">toString</span><span class="params">(T data)</span><span class="comment">// inline: 内联函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ostringstream os;<span class="comment">// 定义字符串输出流对象存储数字</span></span><br><span class="line">os &lt;&lt; data;</span><br><span class="line"><span class="keyword">return</span> os.<span class="built_in">str</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>字符串-&gt;数字</code>的模板函数：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">toNum</span><span class="params">(<span class="type">const</span> string str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">T data;</span><br><span class="line"><span class="function">istringstream <span class="title">is</span><span class="params">(str)</span></span>;<span class="comment">// 定义字符串输入流对象并存入字符串</span></span><br><span class="line">is &gt;&gt; data;</span><br><span class="line"><span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> string <span class="title">toString</span><span class="params">(T data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ostringstream os;</span><br><span class="line">os &lt;&lt; data;</span><br><span class="line"><span class="keyword">return</span> os.<span class="built_in">str</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">toNum</span><span class="params">(<span class="type">const</span> string str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">T data;</span><br><span class="line"><span class="function">istringstream <span class="title">is</span><span class="params">(str)</span></span>;</span><br><span class="line">is &gt;&gt; data;</span><br><span class="line"><span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">string str, str_;</span><br><span class="line"><span class="type">double</span> n;</span><br><span class="line"><span class="type">int</span> m;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;请输入一个数字：&quot;</span>;</span><br><span class="line">cin &gt;&gt; str;</span><br><span class="line">    </span><br><span class="line">cout &lt;&lt; <span class="string">&quot;现在是字符串类型的我：&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">n = <span class="built_in">toNum</span>&lt;<span class="type">double</span>&gt;(str);<span class="comment">// 注意使用尖括号标明模板类型</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;现在是double类型的我：&quot;</span> &lt;&lt; n &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">toNum</span>&lt;<span class="type">int</span>&gt;(str);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;现在是int类型的我：&quot;</span> &lt;&lt; m &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">str_ = <span class="built_in">toString</span>(n);<span class="comment">// 数据传入后会自动判断数据类型所以不需要使用尖括号标注</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;现在又是字符串类型的我：&quot;</span> &lt;&lt; str_ &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    str_ = <span class="built_in">toString</span>(m);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;现在还是字符串类型的我：&quot;</span> &lt;&lt; str_ &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><details class="folding-tag" ><summary> 测试结果 </summary>              <div class='content'>              <p><img src="https://s1.ax1x.com/2023/06/06/pCPrRRf.png" alt=""></p>              </div>            </details>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++实用技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>绘制直线</title>
       <link href="/post/8c0af77f.html"/>
       <url>/post/8c0af77f.html</url>
@@ -573,7 +627,7 @@
       <link href="/post/a3246567.html"/>
       <url>/post/a3246567.html</url>
       
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="头文件：-lt-iomanip-gt-且需要using-namespace-std"><a href="#头文件：-lt-iomanip-gt-且需要using-namespace-std" class="headerlink" title="头文件：&lt;iomanip&gt;且需要using namespace std"></a>头文件：<code>&lt;iomanip&gt;</code>且需要<code>using namespace std</code></h3><h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><h3 id="1-保留n位小数"><a href="#1-保留n位小数" class="headerlink" title="1. 保留n位小数"></a>1. 保留n位小数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> num = <span class="number">1.03456</span>;</span><br><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">setiosflags</span>(ios::fixed) &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line">cout.<span class="built_in">setf</span>(ios::fixed);</span><br><span class="line">cout &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三种写法</span></span><br><span class="line">cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl;</span><br></pre></td></tr></table></figure><h3 id="2-输出数据占n位，不足用零填充"><a href="#2-输出数据占n位，不足用零填充" class="headerlink" title="2. 输出数据占n位，不足用零填充"></a>2. 输出数据占n位，不足用零填充</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">cout &lt;&lt; <span class="built_in">setw</span>(<span class="number">4</span>) &lt;&lt; <span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>) &lt;&lt; str &lt;&lt; endl;</span><br></pre></td></tr></table></figure><h3 id="3-靠左或靠右输出"><a href="#3-靠左或靠右输出" class="headerlink" title="3. 靠左或靠右输出"></a>3. 靠左或靠右输出</h3><p><strong>注意：setw只影响后面一个数据的输出，right/left会影响cout整句，可以单独为每个数据设置left/right</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string str1 = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">string str2 = <span class="string">&quot;2&quot;</span>;</span><br><span class="line">cout &lt;&lt; <span class="built_in">setw</span>(<span class="number">4</span>) &lt;&lt; left &lt;&lt; str1 &lt;&lt; <span class="built_in">setw</span>(<span class="number">4</span>) &lt;&lt; right &lt;&lt; str2 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="头文件：-lt-iomanip-gt-且需要using-namespace-std"><a href="#头文件：-lt-iomanip-gt-且需要using-namespace-std" class="headerlink" title="头文件：&lt;iomanip&gt;且需要using namespace std"></a>头文件：<code>&lt;iomanip&gt;</code>且需要<code>using namespace std</code></h3><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="1-保留n位小数"><a href="#1-保留n位小数" class="headerlink" title="1. 保留n位小数"></a>1. 保留n位小数</h3><p><code>ps</code>：设置小数位数之后会保持有效到下一次设置小数位数</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> num = <span class="number">1.03456</span>;</span><br><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">setiosflags</span>(ios::fixed) &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line">cout.<span class="built_in">setf</span>(ios::fixed);</span><br><span class="line">cout &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三种写法</span></span><br><span class="line">cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl;</span><br></pre></td></tr></table></figure><h3 id="2-输出数据占n位，不足用零填充"><a href="#2-输出数据占n位，不足用零填充" class="headerlink" title="2. 输出数据占n位，不足用零填充"></a>2. 输出数据占n位，不足用零填充</h3><p><code>ps</code>：</p><ol><li>设置输出宽度只对后面一个数据起作用，下一个被输出的数据仍然使用默认宽度</li><li>设置填充符之后会保持有效到下一次设置填充符</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">cout &lt;&lt; <span class="built_in">setw</span>(<span class="number">4</span>) &lt;&lt; <span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>) &lt;&lt; str &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以这样写</span></span><br><span class="line">cout.<span class="built_in">width</span>(<span class="number">4</span>);</span><br><span class="line">cout &lt;&lt; <span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>) &lt;&lt; str &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br></pre></td></tr></table></figure><h3 id="3-靠左或靠右输出"><a href="#3-靠左或靠右输出" class="headerlink" title="3. 靠左或靠右输出"></a>3. 靠左或靠右输出</h3><p><code>ps</code>：设置对齐方式之后会保持有效到下一次设置对齐方式</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string str1 = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">string str2 = <span class="string">&quot;2&quot;</span>;</span><br><span class="line">cout &lt;&lt; <span class="built_in">setw</span>(<span class="number">4</span>) &lt;&lt; left &lt;&lt; str1 &lt;&lt; <span class="built_in">setw</span>(<span class="number">4</span>) &lt;&lt; str2 &lt;&lt; endl;</span><br></pre></td></tr></table></figure><h2 id="C-默认格式"><a href="#C-默认格式" class="headerlink" title="C++默认格式"></a>C++默认格式</h2><ol><li>默认宽度：0(任何数据宽度均大于0，所以默认情况下任何数据都不需要进行填充)</li><li>默认填充符：空格</li><li>默认对齐：右对齐</li></ol>]]></content>
       
       
       <categories>
@@ -973,14 +1027,14 @@
           
           <category> c++ </category>
           
-          <category> 实用函数 </category>
+          <category> 实用技巧 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> c++字符串 </tag>
+            <tag> c++实用技巧 </tag>
             
         </tags>
       
@@ -1000,7 +1054,7 @@
           
           <category> c++ </category>
           
-          <category> 实用函数 </category>
+          <category> 实用语法 </category>
           
       </categories>
       
@@ -1027,7 +1081,7 @@
           
           <category> c++ </category>
           
-          <category> 语法 </category>
+          <category> 实用语法 </category>
           
       </categories>
       
@@ -1243,14 +1297,14 @@
           
           <category> c++ </category>
           
-          <category> 语法 </category>
+          <category> 实用语法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> c++语法 </tag>
+            <tag> c++实用语法 </tag>
             
         </tags>
       
@@ -1270,14 +1324,14 @@
           
           <category> c++ </category>
           
-          <category> 语法 </category>
+          <category> 实用语法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> c++语法 </tag>
+            <tag> c++实用语法 </tag>
             
         </tags>
       
@@ -1297,14 +1351,14 @@
           
           <category> c++ </category>
           
-          <category> 语法 </category>
+          <category> 实用语法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> c++语法 </tag>
+            <tag> c++实用语法 </tag>
             
         </tags>
       
