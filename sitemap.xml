@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.dqywy.top/reward/index.html</loc>
+    
+    <lastmod>2023-06-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.dqywy.top/post/227e574e.html</loc>
     
     <lastmod>2023-06-06</lastmod>
@@ -434,15 +443,6 @@
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/reward/index.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.dqywy.top/post/3d3935c8.html</loc>
     
     <lastmod>2023-05-28</lastmod>
@@ -730,14 +730,14 @@
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/tags/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</loc>
+    <loc>https://www.dqywy.top/tags/WinSDK%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/tags/WinSDK%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://www.dqywy.top/tags/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -851,14 +851,14 @@
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/categories/c/%E5%AE%9E%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://www.dqywy.top/categories/WinSDK/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/categories/WinSDK/</loc>
+    <loc>https://www.dqywy.top/categories/c/%E5%AE%9E%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
