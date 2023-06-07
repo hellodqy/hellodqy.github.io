@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>c++异常详解</title>
+      <link href="/post/3a0c5cfa.html"/>
+      <url>/post/3a0c5cfa.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>异常在被调函数中触发，不断传向下一级主调函数，直到被捕获</p><p><code>ps</code>：若异常无法被捕获，程序会调用库函数terminate，由库函数调用abort函数终止程序</p><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="1-throw"><a href="#1-throw" class="headerlink" title="1. throw"></a>1. throw</h3><p><code>throw</code> + 表达式：抛出异常</p><p><code>ps</code>：表达式可以是数据，也可以是函数(<strong>必须有返回值</strong>)</p><h3 id="2-try-catch"><a href="#2-try-catch" class="headerlink" title="2. try + catch"></a>2. try + catch</h3><p><code>ps</code>：<code>catch (...)</code>表示通用捕获，任何异常均可捕获，但是无法获取异常的值，一般放在所有<code>catch</code>最后</p><p>注：<code>catch (基类异常)</code>可以捕获派生类异常，若基类异常和派生类异常同存，一般将基类异常的捕获放在后面</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span> (exception &amp;e)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span> (...)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="异常接口声明"><a href="#异常接口声明" class="headerlink" title="异常接口声明"></a>异常接口声明</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span> <span class="title">throw</span><span class="params">(A, B, C, D)</span><span class="comment">// A, B, C, D表示可能抛出的异常类型；func()可能抛出异常，须放在try当中</span></span></span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span> <span class="title">throw</span><span class="params">()</span><span class="comment">// 表示func()函数一定不会抛出异常</span></span></span><br></pre></td></tr></table></figure><h2 id="异常处理中的构造与析构"><a href="#异常处理中的构造与析构" class="headerlink" title="异常处理中的构造与析构"></a>异常处理中的构造与析构</h2><h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>从对应的<code>try</code>块开始到异常被抛出之间构造(且尚未析构)的所有自动对象进行析构</p><p><code>ps</code>：若异常不被捕获则无法析构</p><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul><li>函数在抛出异常以前没有释放应该<strong>由它负责</strong>释放的资源</li><li>异常没有被捕获导致应该自动化析构的对象没有被释放</li></ul><h3 id="通常的解决方案"><a href="#通常的解决方案" class="headerlink" title="通常的解决方案"></a>通常的解决方案</h3><ul><li>把一切动态分配的资源都包装成栈上的对象，利用抛掷异常时自动调用对象析构函数的特性来释放资源</li><li>对于必须在堆上构造的对象，可以用智能指针<code>auto_ptr</code>加以包装</li><li>在所有<code>catch</code>最后加一个<code>catch（...）</code>捕获所有类型的异常</li></ul><h2 id="标准程序库的异常类"><a href="#标准程序库的异常类" class="headerlink" title="标准程序库的异常类"></a>标准程序库的异常类</h2><h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdexcept&gt;</span></span></span><br></pre></td></tr></table></figure><h3 id="异常类汇总"><a href="#异常类汇总" class="headerlink" title="异常类汇总"></a>异常类汇总</h3><details class="folding-tag" ><summary> 点击查看 </summary>              <div class='content'>              <p>s<br><img src="https://s1.ax1x.com/2023/06/07/pCkSlOx.png" alt=""></p>              </div>            </details><h3 id="常用异常类"><a href="#常用异常类" class="headerlink" title="常用异常类"></a>常用异常类</h3><ul><li><code>exception</code>：标准程序库异常类的公共基类</li><li><code>logic_error</code>：表示可以在程序中被预先检测到的异常(这类异常可以避免)</li><li><code>runtime_error</code>：表示难以被预先检测到的异常</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>好困🥱明早补充~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+          <category> 实用语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c++文件流操作</title>
       <link href="/post/50f93117.html"/>
       <url>/post/50f93117.html</url>
