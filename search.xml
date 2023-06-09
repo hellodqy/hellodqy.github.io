@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>分类页基础美化</title>
+      <link href="/post/1f3575f8.html"/>
+      <url>/post/1f3575f8.html</url>
+      
+        <content type="html"><![CDATA[<p>在<code>Blog根目录\source\css\custom.css</code>(缺少的文件/文件夹直接新建)新增如下样式：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 分类页样式 began */</span></span><br><span class="line"><span class="selector-class">.category-list-link</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">15px</span> <span class="number">2px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">12</span>), <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="number">0</span> <span class="built_in">rgba</span>(<span class="number">104</span>, <span class="number">104</span>, <span class="number">105</span>, <span class="number">0.1</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">transition-duration</span>: <span class="number">0.15s</span>;</span><br><span class="line">  //<span class="attribute">display</span>:flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.category-list-link</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">18px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">18px</span>;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;📚&quot;</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">font</span>: normal normal normal <span class="number">14px</span>/<span class="number">1</span> FontAwesome;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">18px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 分类页样式 end */</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+          <category> 美化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c++异常详解</title>
       <link href="/post/3a0c5cfa.html"/>
       <url>/post/3a0c5cfa.html</url>
