@@ -1,1 +1,1 @@
-var titleTime,OriginTitile=document.title;document.addEventListener("visibilitychange",(function(){document.hidden?(document.title="404 Not Found",clearTimeout(titleTime)):(document.title="骗你哒~",titleTime=setTimeout((function(){document.title=OriginTitile}),2e3))}));
+var titleTime,OriginTitile=document.title;document.addEventListener("visibilitychange",(function(){document.hidden?(document.title="404 Error",clearTimeout(titleTime)):(document.title="咦~又好了（´◔౪◔）",titleTime=setTimeout((function(){document.title=OriginTitile}),2e3))}));
