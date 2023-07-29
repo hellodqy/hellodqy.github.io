@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>设置同级分类与父子分类</title>
+      <link href="/post/34d98901.html"/>
+      <url>/post/34d98901.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>转载自：<a href="[Hexo 一篇文章多个 categories - 简书 (jianshu.com">Hexo 一篇文章多个 categories</a>](<a href="https://www.jianshu.com/p/bff1b1845ac9">https://www.jianshu.com/p/bff1b1845ac9</a>))</p><h2 id="父子分类"><a href="#父子分类" class="headerlink" title="父子分类"></a>父子分类</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">-</span> 博客</span><br><span class="line"><span class="bullet">-</span> 搭建</span><br></pre></td></tr></table></figure><h2 id="同级分类"><a href="#同级分类" class="headerlink" title="同级分类"></a>同级分类</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">-</span> [CVE]</span><br><span class="line"><span class="bullet">-</span> [捆绑]</span><br></pre></td></tr></table></figure><h2 id="同级分类复合父子分类"><a href="#同级分类复合父子分类" class="headerlink" title="同级分类复合父子分类"></a>同级分类复合父子分类</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">-</span> [CVE, poc分析]</span><br><span class="line"><span class="bullet">-</span> [捆绑, 源码]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+          <category> 搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>折叠框与tab分栏</title>
       <link href="/post/b78500b8.html"/>
       <url>/post/b78500b8.html</url>
@@ -116,6 +143,8 @@
       <categories>
           
           <category> CVE剖析 </category>
+          
+          <category> 捆绑 </category>
           
       </categories>
       
