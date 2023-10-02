@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.dqywy.top/about/index.html</loc>
+    
+    <lastmod>2023-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.dqywy.top/post/c4c57e4b.html</loc>
     
     <lastmod>2023-10-02</lastmod>
@@ -203,15 +212,6 @@
     <loc>https://www.dqywy.top/post/9b670e9a.html</loc>
     
     <lastmod>2023-07-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.dqywy.top/about/index.html</loc>
-    
-    <lastmod>2023-06-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -940,14 +940,14 @@
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://www.dqywy.top/tags/EasyX/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/tags/EasyX/</loc>
+    <loc>https://www.dqywy.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -982,14 +982,14 @@
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/tags/c-%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://www.dqywy.top/tags/c-%E6%96%87%E4%BB%B6%E6%B5%81/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/tags/c-%E6%96%87%E4%BB%B6%E6%B5%81/</loc>
+    <loc>https://www.dqywy.top/tags/c-%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1096,14 +1096,14 @@
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/categories/%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://www.dqywy.top/categories/c/EasyX/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.dqywy.top/categories/c/EasyX/</loc>
+    <loc>https://www.dqywy.top/categories/%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
