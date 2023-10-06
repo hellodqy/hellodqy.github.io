@@ -1,1 +1,23 @@
-"use strict";const cheerio=require("cheerio");function insertTopImg(e){let t=e("#page-header");if(0===t.length)return;let r=t.css("background-image");r&&e("#post, #page, #archive, #tag, #category").prepend(`<div class="top-img" style="background-image: ${r};"></div>`)}hexo.extend.filter.register("after_render:html",(function(e,t){let r=cheerio.load(e,{decodeEntities:!1});return insertTopImg(r),r.html()}));
+/** 一图流脚本*/
+'use strict';
+const cheerio = require('cheerio');
+
+/**
+ * 在页面插入新顶部图
+ * @param {cheerio.Root} $ Root
+ */
+function insertTopImg($) {
+    let header = $('#page-header');
+    if (header.length === 0) return;
+    let background = header.css('background-image');
+    if (!background) return;
+    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);
+}
+
+hexo.extend.filter.register('after_render:html', function (str, data) {
+    let $ = cheerio.load(str, {
+        decodeEntities: false
+    });
+    insertTopImg($);
+    return $.html();
+});
