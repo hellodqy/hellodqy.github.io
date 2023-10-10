@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>V2rayN实现Ubuntu共享主机VPN</title>
+      <link href="/post/50a0a2de.html"/>
+      <url>/post/50a0a2de.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="V2rayN设置"><a href="#V2rayN设置" class="headerlink" title="V2rayN设置"></a>V2rayN设置</h2><p><img src="https://z1.ax1x.com/2023/10/10/pPz9ZRI.png" alt="image 20231010164429617"></p><ul><li><strong>记录本地socks监听端口</strong></li><li><strong>开启允许来自局域网的连接选项</strong></li></ul><p><img src="https://z1.ax1x.com/2023/10/10/pPz9nQP.png" alt="image 20231010164449499"></p><p><strong><code>cmd</code>输入<code>ipconfig</code>记录<code>VMnet8</code>IPv4地址</strong></p><p><img src="https://z1.ax1x.com/2023/10/10/pPz9VJA.png" alt="image 20231010164555641"></p><p><strong>打开<code>Ubuntu</code>网络有线设置</strong></p><p><img src="https://z1.ax1x.com/2023/10/10/pPz9ezt.png" alt="image 20231010164628548"></p><p><strong>打开网络代理</strong></p><p><img src="https://z1.ax1x.com/2023/10/10/pPz9Eid.png" alt="image 20231010164649978"></p><ul><li><strong>选择手动，Socks主机填入<code>VMnet8</code>的IPv4地址</strong></li><li><strong>端口填入V2rayN的本地socks监听端口</strong></li><li><strong>关闭网络代理窗口</strong></li></ul><p><img src="https://z1.ax1x.com/2023/10/10/pPz9usf.png" alt="image 20231010164717925"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 虚拟机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 共享VPN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++项目打包发布</title>
       <link href="/post/c4c57e4b.html"/>
       <url>/post/c4c57e4b.html</url>
