@@ -17,6 +17,25 @@
     
     
     <entry>
+      <title>部署腾讯云CDN</title>
+      <link href="/post/3afe4483.html"/>
+      <url>/post/3afe4483.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p><strong>进入<a href="https://console.cloud.tencent.com/cdn">腾讯云CDN</a></strong></p><p><strong>新用户进入会提示开通，完成后就能自动获取腾讯云赠送的流量包(没有的话就去找别的学生活动领取)</strong></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="添加域名"><a href="#添加域名" class="headerlink" title="添加域名"></a>添加域名</h3><p><strong>左侧菜单-&gt;域名管理-&gt;添加域名</strong></p><p><img src="https://z1.ax1x.com/2023/10/15/pi90fwd.png" alt="image 20231015130707188"></p><h3 id="配置选项"><a href="#配置选项" class="headerlink" title="配置选项"></a>配置选项</h3><p><strong>注意：如果回源协议选择HTTPS，配置的时候要上传SSL证书内容，否则仍然会使用HTTP访问，配置的时候忘了可以在域名管理页面删除域名重新申请</strong></p><ul><li><strong>加速区域：国内</strong></li><li><strong>加速域名：dqywy.top</strong></li><li><strong>加速类型：自选，我选择CDN网页小文件</strong></li><li><strong>IPV6：不选</strong></li><li><strong>所属项目：默认项目</strong></li><li><strong>原站类型：自有源</strong></li><li><strong>回源协议：配置了SSL就选择HTTPS，否则就选HTTP</strong></li><li><strong>源站地址：服务器公网IP，支持多个</strong></li><li><strong>推荐配置我一项没改</strong></li></ul><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a><strong>效果</strong></h2><p><img src="https://z1.ax1x.com/2023/10/15/pi90hTA.png" alt="image 20231015130229263"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CDN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里云证书申请与部署</title>
       <link href="/post/533e56e4.html"/>
       <url>/post/533e56e4.html</url>
