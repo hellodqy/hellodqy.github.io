@@ -4,6 +4,52 @@
   
     
     <entry>
+      <title>部署腾讯云CDN</title>
+      <link href="/post/3afe4483.html"/>
+      <url>/post/3afe4483.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p><strong>进入<a href="https://console.cloud.tencent.com/cdn">腾讯云CDN</a></strong></p><p><strong>新用户进入会提示开通，完成后就能自动获取腾讯云赠送的流量包(没有的话就去找别的学生活动领取)</strong></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="添加域名"><a href="#添加域名" class="headerlink" title="添加域名"></a>添加域名</h3><p><strong>左侧菜单-&gt;域名管理-&gt;添加域名</strong></p><p><img src="https://z1.ax1x.com/2023/10/15/pi90fwd.png" alt="image 20231015130707188"></p><h3 id="配置选项"><a href="#配置选项" class="headerlink" title="配置选项"></a>配置选项</h3><p><strong>注意：如果回源协议选择HTTPS，配置的时候要上传SSL证书内容，否则仍然会使用HTTP访问，配置的时候忘了可以在域名管理页面删除域名重新申请</strong></p><ul><li><strong>加速区域：国内</strong></li><li><strong>加速域名：dqywy.top</strong></li><li><strong>加速类型：自选，我选择CDN网页小文件</strong></li><li><strong>IPV6：不选</strong></li><li><strong>所属项目：默认项目</strong></li><li><strong>原站类型：自有源</strong></li><li><strong>回源协议：配置了SSL就选择HTTPS，否则就选HTTP</strong></li><li><strong>源站地址：服务器公网IP，支持多个</strong></li><li><strong>推荐配置我一项没改</strong></li></ul><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a><strong>效果</strong></h2><p><img src="https://z1.ax1x.com/2023/10/15/pi90hTA.png" alt="image 20231015130229263"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CDN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>阿里云SSL证书申请与部署</title>
+      <link href="/post/15a46dc9.html"/>
+      <url>/post/15a46dc9.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p><strong>登录<a href="https://yundun.console.aliyun.com/?spm=a2c6h.12873639.article-detail.8.2ec840788BDbhu&amp;userCode=r3yteowb&amp;p=cas#/overview/cn-hangzhou">阿里云数字证书管理服务控制台</a></strong></p><p><strong>左侧菜单-&gt;SSL证书-&gt;免费证书-&gt;立即购买</strong></p><p><img src="https://z1.ax1x.com/2023/10/15/pi90Hl8.png" alt="image 20231015123416781"></p><p><strong>产品：免费证书-&gt;数量20-&gt;其他服务：不需要</strong></p><p><img src="https://z1.ax1x.com/2023/10/15/pi907Sf.png" alt="image 20231015123511626"></p><p><strong>填写证书绑定域名-&gt;域名验证-&gt;联系人信息-&gt;密钥算法(默认RSA)-&gt;CSR生成方式(系统生成)</strong></p><ul><li>域名验证方式：如果域名在当前的阿里云账号下，那么可以选择自动DNS验证(没有这个选项就直接选手工验证)</li><li>联系人：如果之前没有填写过，新建联系人</li></ul><p><strong>证书下载</strong></p><p><img src="https://z1.ax1x.com/2023/10/15/pi90ofP.png" alt="image 20231015124013245"></p><p><strong>根据实际部署用的服务器选择，我选择<code>Nginx</code></strong></p><p><img src="https://z1.ax1x.com/2023/10/15/pi905FI.png" alt="image 20231015124043676"></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="开启443端口"><a href="#开启443端口" class="headerlink" title="开启443端口"></a>开启443端口</h3><p>非常重要且容易忽略的一步，部署过云服务器肯定都会这个</p><h3 id="解压与上传"><a href="#解压与上传" class="headerlink" title="解压与上传"></a>解压与上传</h3><ul><li>解压证书文件得到<code>.pem</code>和<code>.key</code></li><li>云服务器上创建文件夹: <code>mkdir /etc/nginx/cert</code></li><li>上传证书到文件夹(如果使用阿里云可以直接使用实例控制台的文件发送功能)</li></ul><p><img src="https://z1.ax1x.com/2023/10/15/pi90IYt.png" alt="image 20231015124327965"></p><h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -t  // 查看位置，一般为 /etc/nginx/nginx.conf</span><br><span class="line">vim /etc/nginx/nginx.conf //修改配置文件</span><br></pre></td></tr></table></figure><h4 id="HTTP部分"><a href="#HTTP部分" class="headerlink" title="HTTP部分"></a>HTTP部分</h4><p>新增<code>rewrite</code>用于把<code>http</code>的域名请求转成<code>https</code></p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">server <span class="punctuation">&#123;</span></span><br><span class="line">        listen       <span class="number">80</span>;</span><br><span class="line">        listen       <span class="punctuation">[</span><span class="punctuation">:</span><span class="punctuation">:</span><span class="punctuation">]</span><span class="punctuation">:</span><span class="number">80</span>;</span><br><span class="line">        server_name  dqywy.top;</span><br><span class="line">        root         /home/hexo;</span><br><span class="line"></span><br><span class="line">        rewrite ^(.*)$ https<span class="punctuation">:</span><span class="comment">//dqywy.top;# 新增</span></span><br><span class="line"></span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d<span class="comment">/*.conf;</span></span><br><span class="line"><span class="comment">        error_page 404 /404.html;</span></span><br><span class="line"><span class="comment">        location = /404.html &#123;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        error_page 500 502 503 504 /50x.html;</span></span><br><span class="line"><span class="comment">        location = /50x.html &#123;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br></pre></td></tr></table></figure><h4 id="HTTPS部分"><a href="#HTTPS部分" class="headerlink" title="HTTPS部分"></a>HTTPS部分</h4><ul><li>取消注释</li><li>填写<code>server_name</code>(域名)、<code>root</code>(网站前台)、<code>ssl_certificate</code>(<code>.pem</code>文件)、<code>ssl_certificate_key</code>(<code>.key</code>文件)</li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">server <span class="punctuation">&#123;</span></span><br><span class="line">        listen       <span class="number">443</span> ssl http2;</span><br><span class="line">        listen       <span class="punctuation">[</span><span class="punctuation">:</span><span class="punctuation">:</span><span class="punctuation">]</span><span class="punctuation">:</span><span class="number">443</span> ssl http2;</span><br><span class="line">        server_name  dqywy.top;</span><br><span class="line">        root         /home/hexo;</span><br><span class="line"></span><br><span class="line">        ssl_certificate cert/dqywy.top.pem;</span><br><span class="line">        ssl_certificate_key cert/dqywy.top.key;</span><br><span class="line">        ssl_session_cache shared<span class="punctuation">:</span>SSL<span class="punctuation">:</span><span class="number">1</span>m;</span><br><span class="line">        ssl_session_timeout  <span class="number">10</span>m;</span><br><span class="line">        ssl_ciphers HIGH<span class="punctuation">:</span>!aNULL<span class="punctuation">:</span>!MD5;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d<span class="comment">/*.conf;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        error_page 404 /404.html;</span></span><br><span class="line"><span class="comment">            location = /40x.html &#123;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        error_page 500 502 503 504 /50x.html;</span></span><br><span class="line"><span class="comment">            location = /50x.html &#123;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br></pre></td></tr></table></figure><h4 id="配置完成后检查并重启"><a href="#配置完成后检查并重启" class="headerlink" title="配置完成后检查并重启"></a><strong>配置完成后检查并重启</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -t // 检查nginx配置文件，返回successful即可</span><br><span class="line">nginx -s reload // 使配置生效</span><br></pre></td></tr></table></figure><p><strong>注意</strong>：记得改一下本地<code>_config.yml</code>中的网站URL地址</p><p><strong>使用<code>https://域名</code>访问即可查看效果</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+          <category> 部署 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSL证书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>V2rayN实现Ubuntu共享主机VPN</title>
       <link href="/post/50a0a2de.html"/>
       <url>/post/50a0a2de.html</url>
