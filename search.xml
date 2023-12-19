@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>简单伪造邮件发件人</title>
+      <link href="/post/2db28f9b.html"/>
+      <url>/post/2db28f9b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="使用Swaks伪造邮件发件人"><a href="#使用Swaks伪造邮件发件人" class="headerlink" title="使用Swaks伪造邮件发件人"></a>使用Swaks伪造邮件发件人</h2><h3 id="安装Swaks"><a href="#安装Swaks" class="headerlink" title="安装Swaks"></a>安装Swaks</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install swaks</span><br></pre></td></tr></table></figure><h3 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h3><p>使用命令<code>swaks --to &lt;测试邮箱&gt;</code>对目标邮箱的状态进行测试。</p><p><img src="https://s11.ax1x.com/2023/12/19/piIIYPs.jpg" alt="wps1"> </p><p>从图中可以看出，返回<strong>250ok</strong>，说明该邮箱存在，并且可以正常收信。</p><p><img src="https://s11.ax1x.com/2023/12/19/piIIG5j.jpg" alt="wps2"> </p><p>从上图可以看出，最后返回<strong>550</strong>报错，这是因为没有使用授权码导致<strong>SPF</strong>校验不通过。</p><h3 id="获取授权码"><a href="#获取授权码" class="headerlink" title="获取授权码"></a>获取授权码</h3><p>以163邮箱为例，点击首页的设置选项，选择<code>POP3/SMTP3IMAP</code></p><p><img src="https://s11.ax1x.com/2023/12/19/piII8aQ.jpg" alt="wps3"> </p><p>开启下方两个服务并记录生成的授权码<img src="https://s11.ax1x.com/2023/12/19/piII3Vg.jpg" alt="wps4"></p><h3 id="伪造发件人和内容"><a href="#伪造发件人和内容" class="headerlink" title="伪造发件人和内容"></a>伪造发件人和内容</h3><p>构造邮件内容，使用163邮箱发送邮件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swaks --to &lt;目标邮箱&gt; --from &lt;163的邮箱&gt; --h-From: <span class="string">&#x27;教务处 &lt;admin@cqupt.eud.cn&gt;&#x27;</span> --body <span class="string">&quot;今晚九点学生处开会。&quot;</span> --server smtp.163.com -p 25 -au &lt;163的邮箱&gt; -ap 授权码</span><br></pre></td></tr></table></figure><h3 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h3><p>手机端通知栏看到的效果</p><p><img src="https://s11.ax1x.com/2023/12/19/piIItGn.jpg" alt="wps5"> </p><p>手机端QQ邮箱看到的效果</p><p><img src="https://s11.ax1x.com/2023/12/19/piIIdMV.png" alt="wps6"> </p><p>PC端通知栏看到的效果</p><p><img src="https://s11.ax1x.com/2023/12/19/piIIN2q.jpg" alt="wps7"> </p><p>PC端QQ邮箱看到的效果</p><p><img src="https://s11.ax1x.com/2023/12/19/piIIUx0.jpg" alt="wps8"> </p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>从图中可以看到，在发件人的下方有一栏显示该邮件是由dqy1016751306@163.com代发，且QQ邮箱检测到了该邮件的实际发件人和声明发件人不一致并给出了警告。后续可以尝试自行搭建邮件服务器解决。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 邮件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 邮件伪造 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>汇编实现进制转换和显存输出</title>
       <link href="/post/43fda7c0.html"/>
       <url>/post/43fda7c0.html</url>
