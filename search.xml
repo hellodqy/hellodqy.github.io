@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>vscode配置latex</title>
+      <link href="/post/e16b560b.html"/>
+      <url>/post/e16b560b.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/166523064">原文链接</a></p><p>原文写的非常详细，这里只是小结：</p><h2 id="查看报错"><a href="#查看报错" class="headerlink" title="查看报错"></a>查看报错</h2><p><img src="https://s21.ax1x.com/2024/04/10/pFOfWnK.png" alt="1"></p><h2 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h2><p>文件路径不可以有中文！！</p><h2 id="关闭ChkTex报错"><a href="#关闭ChkTex报错" class="headerlink" title="关闭ChkTex报错"></a>关闭ChkTex报错</h2><p>在settings.json中加入下列代码，注意前面一行加逗号</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;latex.linter.enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LaTex </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> latex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>gpt提示词</title>
       <link href="/post/eb2e4fe3.html"/>
       <url>/post/eb2e4fe3.html</url>
