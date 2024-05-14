@@ -609,7 +609,7 @@ li.todolist-li {
 }
 
 
-/*目录效果*/
+/*文章目录效果*/
 
 @media screen and (max-width: 768px) {
     #aside-content .card-widget:not(#card-toc) {
@@ -800,86 +800,6 @@ i:hover {
 }
 
 
-
-/* 滚动条 */
-
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #e58a8a;
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
-    border-radius: 2em;
-}
-
-::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-
-::-moz-selection {
-    color: #e58a8a;
-    background-color: #e58a8a;
-}
-
-/*右边滚动条、底部滚动条、div内滚动条*/
-/* 滚动条宽度 */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* 滚动条轨道颜色 */
-::-webkit-scrollbar-track {
-    background-color: #ffffff;
-}
-
-/* 滚动条颜色 */
-::-webkit-scrollbar-thumb {
-    background-color: #394e89;
-}
-
-/* 鼠标移动到滚动条上后显示的颜色 */
-::-webkit-scrollbar-thumb:hover {
-    background-color: #f06885;
-}
-
-
-/*哔哩哔哩视频适配*/
-.bilibili {
-    position: relative;
-    width: 100%;
-}
-
-@media only screen and (max-width: 767px) {
-    .bilibili {
-        height: 15em;
-        max-width: 25em;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .bilibili {
-        height: 20em;
-        max-width: 30em;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .bilibili {
-        height: 30em;
-        max-width: 40em;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .bilibili {
-        height: 40em;
-        max-width: 50em;
-    }
-}
-
-
 /* 分类页样式 began */
 .category-list-link:hover {
     transform: scale(1.1);
@@ -981,8 +901,6 @@ i:hover {
 .icon-xiewenzhang:before {
     content: "\e645";
 }
-
-
 
 
 /* 头像卡片悬浮彩带 */
