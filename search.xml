@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>超简单部署前端小项目</title>
+      <link href="/post/8b97a9a.html"/>
+      <url>/post/8b97a9a.html</url>
+      
+        <content type="html"><![CDATA[<p>经常会写点简单的小项目练手，但是又没有云服务器，可以采用<strong>个人域名</strong>结合<code>github</code>+<code>vercel</code>简单部署</p><h2 id="个人域名购买"><a href="#个人域名购买" class="headerlink" title="个人域名购买"></a>个人域名购买</h2><p>阿里云和腾讯云都可</p><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><code>github</code>新建仓库，将项目文件直接上传（如果项目文件较多，使用<code>git</code>上传）</p><p><img src="https://s2.loli.net/2024/05/14/7XkmZTNxlI9zUhJ.png" alt="image-20240514153057528.png"></p><p>页面这些<code>html</code>需要在仓库根目录，<code>css</code>、<code>js</code>和图片等注意保证相对路径</p><p>注：直接将整个项目文件夹直接传上去也行，只不过在部署到<code>Vercel</code>的时候要将<code>Root Directory</code>修改为项目的根目录（后面会指出在哪里修改）</p><p><img src="https://s2.loli.net/2024/05/14/E4trsYDwAfzQR5b.png" alt="image-20240514153242043.png"></p><h2 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel"></a>Vercel</h2><p>首页点击新建<code>Project</code></p><p><img src="https://s2.loli.net/2024/05/14/MyOwCB19PzKhjr7.png" alt="image-20240514153523769.png"></p><p>关联<code>github</code>账号，选择刚刚创建的仓库并<code>import</code></p><p><img src="https://s2.loli.net/2024/05/14/2FbagT8RDkKjivx.png" alt="image-20240514153702396.png"></p><p>如果你的项目根目录和仓库根目录一致，直接点击<code>Deploy</code>；否则在<code>Root Dirctory</code>选项修改根目录</p><p><img src="https://s2.loli.net/2024/05/14/lSeWC5btzxZ9rLI.png" alt="image-20240514153808965.png"></p><p>这里就已经部署好了，点击<code>Continue to Dashboard</code></p><p><img src="https://s2.loli.net/2024/05/14/Vy3tpzZPIXaLok4.png" alt="image-20240514153924319.png"></p><p><code>Domains</code>就是部署好的项目<code>url</code>，但是这个是需要<code>vpn</code>才能访问。接下来我们将项目<code>url</code>配置为个人域名，这样就可以不使用<code>vpn</code>直接访问</p><p><img src="https://s2.loli.net/2024/05/14/W7xmn6eKlhY2aN5.png" alt="image-20240514154016890.png"></p><h2 id="配置域名"><a href="#配置域名" class="headerlink" title="配置域名"></a>配置域名</h2><p>以阿里云为例，控制台-&gt;云解析DNS-&gt;解析设置-&gt;添加域名解析记录：</p><ul><li>记录类型：CNAME</li><li>主机记录：自定义，与项目相关的单词</li><li>记录值：暂时随便填一个，后面会修改为<code>Vercel</code>指定的<code>url</code></li><li>其余内容不修改</li></ul><p><code>Vercel</code>打开刚刚部署的<strong>项目页面</strong>，点击<code>Settings</code></p><p><img src="https://s2.loli.net/2024/05/14/18lWvkpOnDuYqgE.png" alt="image-20240514154148782.png"></p><p>选择<code>Domains</code>，填入刚刚创建的二级域名，点击<code>Add</code></p><p><img src="https://s2.loli.net/2024/05/14/mgZYSxjyElDdzPO.png" alt="image-20240514155318336.png"></p><p>按照<code>Vercel</code>给出的规则修改域名的记录值，实际上就是将解析记录中的记录值改为<code>cname.vercel-dns.com</code>即可，其他都不用改</p><p><img src="https://s2.loli.net/2024/05/14/yOrqLgudT6QbXjh.png" alt="image-20240514155358341.png"></p><p>保存修改记录之后<code>Vercel</code>会自动检测到，等待几分钟Vercel会将<code>ssl</code>证书生成好，就可以直接使用二级域名访问了</p><p><img src="https://s2.loli.net/2024/05/14/LD9py47JKeGFnil.png" alt="image-20240514155933170.png"></p><p>回到<code>Project</code>页面也可看到我们自定义的域名，点击即可直接访问</p><p><img src="https://s2.loli.net/2024/05/14/3516eCVEhijnBfP.png" alt="image-20240514160018329.png"></p><p>至此，部署结束，大家都可以通过域名直接使用你的项目啦！</p><p>图床：<code>SMMS</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端部署 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vscode配置JSX自动格式化</title>
       <link href="/post/c639d757.html"/>
       <url>/post/c639d757.html</url>
