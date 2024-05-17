@@ -5,13 +5,15 @@
 }
 
 /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
+/* 导航 */
 .menus_items .menus_item:nth-child(2) .menus_item_child {
     left: -100px;
 }
 
-/* 这里的4是代表导航栏的第4个元素，即有子菜单的元素，可以按自己需求修改 */
-.menus_items .menus_item:nth-child(4) .menus_item_child {
-    left: -80px;
+/* 这里的3是代表导航栏的第3个元素，即有子菜单的元素，可以按自己需求修改 */
+/* 休闲 */
+.menus_items .menus_item:nth-child(3) .menus_item_child {
+    left: -120px;
 }
 
 /* 这里的5是代表导航栏的第5个元素，即有子菜单的元素，可以按自己需求修改 */
@@ -828,10 +830,14 @@ i:hover {
 
 .iconfont {
     font-family: "iconfont" !important;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tanchishedazuozhan:before {
+    content: "\e600";
 }
 
 .icon-info:before {
@@ -903,6 +909,13 @@ i:hover {
 }
 
 
+/* 字体样式 */
+@font-face {
+    font-family: 'ziti';
+    font-display: swap;
+    src: url('/fonts/MaoKenZhuYuanTi-MaokenZhuyuanTi-2.ttf') format("truetype");
+}
+
 /* 头像卡片悬浮彩带 */
 /* 信息卡片彩带 */
 .author_top:hover {
@@ -923,14 +936,6 @@ i:hover {
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-size: 100%;
-}
-
-
-/* 字体样式 */
-@font-face {
-    font-family: 'ziti';
-    font-display: swap;
-    src: url('/fonts/MaoKenZhuYuanTi-MaokenZhuyuanTi-2.ttf') format("truetype");
 }
 
 /* 首页飞机 */
