@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>从零部署Perplexica</title>
+      <link href="/post/f78b0076.html"/>
+      <url>/post/f78b0076.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>记录一些部署过程遇到的问题与解决方法。Perplexica是一个AI搜索引擎，<a href="https://github.com/ItzCrazyKns/Perplexica">项目地址</a></p></blockquote><h3 id="安装WSL2"><a href="#安装WSL2" class="headerlink" title="安装WSL2"></a>安装WSL2</h3><p>参考：</p><ul><li><a href="https://blog.csdn.net/m0_51233386/article/details/127961763">Windows 10 安装配置WSL2（ubuntu20.04）教程 超详细</a></li><li><a href="https://blog.csdn.net/weixin_48386220/article/details/131920077">史上最全从0开始教你玩转wsl2+docker，构建自己的开发环境</a></li></ul><p>首先阅读教程二，确保windows功能都已开启</p><p>然后阅读教程一的方法二，使用命令行安装wsl并切换为wsl2</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br><span class="line">wsl --set-default-version 2</span><br></pre></td></tr></table></figure><p>到微软商店搜索Ubuntu并安装，进入ubuntu设置用户名和密码</p><p>解决0x80370102：</p><ol><li>bcdedit /set hypervisorlaunchtype auto</li><li>Disable the “Virtual Machine Platform” feature</li><li>Restart your PC</li><li>Re-enable the “Virtual Machine Platform” feature</li><li>Restart your PC</li></ol><h3 id="安装docker-desktop"><a href="#安装docker-desktop" class="headerlink" title="安装docker desktop"></a>安装docker desktop</h3><p>跟着教程二走就行</p><h3 id="部署Perplexica"><a href="#部署Perplexica" class="headerlink" title="部署Perplexica"></a>部署<a href="https://github.com/ItzCrazyKns/Perplexica">Perplexica</a></h3><p><a href="https://github.com/ItzCrazyKns/Perplexica?tab=readme-ov-file#installation">安装说明</a></p><p><strong>FAQ</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1. 部署完成之后访问http://localhost:3000失败</span><br><span class="line">使用ipconfig查看ipv4地址并替换localhost，注意使用http而不是https</span><br><span class="line"></span><br><span class="line">2. 如何使用非官网的openai API</span><br><span class="line">- 点击网页左下角的齿轮</span><br><span class="line">- Chat model Provider选择Custom_openai</span><br><span class="line">- Model name自选，例如gpt-4o-mini</span><br><span class="line">- 填写API key</span><br><span class="line">- 填写API提供方的URL，注意⚠️URL结尾要注明版本，e.g. https://openai.mamahaha.work/v1</span><br><span class="line">- Embedding model Provider选择openai</span><br><span class="line"></span><br><span class="line">3. 当搜索之后一直转圈没有回显</span><br><span class="line">查看docker容器中的perplexica-perplexica-backend-1，可能会发现下面列出的报错</span><br><span class="line"></span><br><span class="line">4. Unhandled Rejection at: [object Promise], reason: Error: 401 Incorrect API key provided: sk-HOpkT***************************************36D2. You can find your API key at https://platform.openai.com/account/api-keys.</span><br><span class="line">一般是你使用了非官方的API，但是没有自定义API对应的URL</span><br><span class="line"></span><br><span class="line">5. Unhandled Rejection at: [object Promise], reason: TypeError: Cannot read properties of undefined (reading &#x27;indexOf&#x27;)</span><br><span class="line">一般是你使用了非官方的API，但是没有自定义URL或者URL结尾没有注明/v1</span><br><span class="line"></span><br><span class="line">6. 在首页选择Balanced模式出现第3点报错</span><br><span class="line">未解决</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> wsl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>保研之路</title>
       <link href="/post/c7bb2bb0.html"/>
       <url>/post/c7bb2bb0.html</url>
@@ -271,8 +296,6 @@
           
           <category> c++ </category>
           
-          <category> 网络编程 </category>
-          
       </categories>
       
       
@@ -317,7 +340,7 @@
           
           <category> 博客 </category>
           
-          <category> 部署 </category>
+          <category> 搭建 </category>
           
       </categories>
       
@@ -449,8 +472,6 @@
       <categories>
           
           <category> c++ </category>
-          
-          <category> EasyX </category>
           
       </categories>
       
@@ -1437,8 +1458,6 @@
           
           <category> c++ </category>
           
-          <category> 常见报错 </category>
-          
       </categories>
       
       
@@ -1761,8 +1780,6 @@
           
           <category> c++ </category>
           
-          <category> 常见报错 </category>
-          
       </categories>
       
       
@@ -1991,8 +2008,6 @@
       <categories>
           
           <category> c++ </category>
-          
-          <category> 程序分析 </category>
           
       </categories>
       
